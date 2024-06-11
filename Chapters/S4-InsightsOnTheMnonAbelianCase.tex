@@ -1,0 +1,56 @@
+\section{The M not abelian case}
+
+\begin{theorem}
+    \label{cardS}
+    Let us assume that $M$ is not abelian. Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, the cardinality of the set $\mathscr{S}_\beta$ is $k$.
+\end{theorem}
+
+\begin{proof}
+    If $\beta \colon L_k \rightarrow L/M$ is a surjective homomorphism, we claim that $\ker \beta = \soc{L_k} = M^k$.
+    We have that $\card{L_k}/\card{\ker \beta} = \card{L}/\card{M} \implies \card{\ker \beta} = \card{M^k}$ and hence by Theorem \ref{th:nsubsoc} we have $\ker \beta = \soc{L_k}$.
+
+    The normal subgroups we have to count are precisely the normal subgroups of $L_k$ contained in $\soc{L}$ and such that $L_k/N \cong L$. This follows since if there exists an isomorphism $\phi$ between $L_k/N$ and $L$ then 
+    $\Psi = \phi \circ \pi \colon L_K \rightarrow L$, where $\pi \colon L_k \rightarrow L_k/N$ is the natural projection, makes $\ker \Psi = N \in \mathscr{S}_\beta$. On the other hand if $N \in \mathscr{S}_\beta$ then applying the First isomorphism Theorem shows that $L_k/N \cong L$  
+    
+    The $k$ direct factors of $M^k$ are the unique minimal normal subgroups of $L_k$ and the normal subgroups $N$ we are considering are precisely the direct products of $k-1$ of them, so we have exactly $k$ possibilities.
+\end{proof}
+
+\begin{theorem}
+    \label{S4:Ndp}
+    Let us assume that $M$ is not abelian. If $N \nsub L_k$ and $N \subseteq L_k$, then $N$ is a direct product of some $M_1,...,M_k$.
+\end{theorem}
+
+\begin{proof}
+    Let $N_i = \pi_i(N)$. Since $N_i = \pi_i(N) \subseteq \pi_i(M^k) = M$, $M$ is a minimal normal subgroup of $L$ and $\pi_i(N)$ is normal in $L$ we have that $\pi_i(N)$ is either $1$ or $M$.
+    Furthermore we have that $\pi_i|_{L_k}^{-1}(1) = \pi_i^{-1}(1) \cap L_k = (L \times ... \times 1 \times \times L) \cap L_k = (M \times ... \times 1 \times ... \times M)$ and that $\pi_i|_{L_k}^{-1}(M) = M^k$.
+    Thus $N \subseteq \cap_{i=1}^k \pi_i^{-1}(N_i) = \prod_{\left\{j | N_j = M \right\}} M_j$, that is $N$ is contained in the set whose coordinate $i$ is $M$ iff $\pi_i(N) = M$ otherwise is $1$. The first inclusion is thus complete.
+
+    Now we claim that for any $1 \le i \le k$, $\pi_i(N) = M$ implies $M_i \subseteq N$. Since $M_i$ is a minimal normal subgroup $N \cap M_i$ is either $1$ or $M_i$. If $N \cap M_i = 1$ then $[N, M_i] \le N \cap M_i = 1$, that is the elements of $N$ and $M_i$ commute. Furthermore since $M$ is non-abelian there exists $x,y \in M$ such that $xy \ne yx$. Since $\pi_i$ is a surjective function, there are $m_i \in M_i$ and $n \in N$ such that $y= \pi(m_i)$ and $x = \pi_i(n)$. We thus obtain 
+    \begin{align*}
+        xy &= \pi_i(n)\pi_i(m_i) \\ 
+           &= \pi_i(nm_i) \\
+           &= \pi_i(m_in) \\
+           &= \pi_i(m_i)\pi_i(n) \\
+           &=yx,
+    \end{align*}
+    a contradiction.
+    From the claim just proven it easily follows that $\prod_{\left\{j | N_j = M \right\}} M_j \subseteq N$ and the proof is thus complete.
+
+\end{proof}
+
+\begin{theorem}
+    \label{S4:Ndpkm1}
+    If $L_k/N \cong L$ then $N$ is a direct product of $k-1$ factors $M_i$.
+\end{theorem}
+
+\begin{proof}
+    Since $\card{L_k/N} = \card{L_k} / \card{N} = \card{L}$ we obtain that $\card{N} = \card{M}^{k-1}$. It thus follows by Theorem \ref{th:nsubsoc} that $N \subseteq M^k$. Now by Theorem \ref{S4:Ndp} $N$ is a direct product of some factors $M_i$ and since it has order $\card{M}^{k-1}$ it must be of $k-1$ of them. 
+\end{proof}
+
+\begin{theorem}
+    The cardinality of the set $\mathcal{N} = \left\{N \nsub L_k | N \le \soc{L_k} \text{ and } L_k /N \cong L \right\}$ is $k$.
+\end{theorem}
+
+\begin{proof}
+    By Theorem \ref{S4:Ndpkm1}, if $N \in \mathcal{N}$ it is a direct product of $k-1$ factors $M_i$. Since there are exactly $k$ direct products of $k-1$ $M_i$ factors, we obtain that $\card{\mathcal{N}} = k$.
+\end{proof}

@@ -1,0 +1,42 @@
+\section{The case \texorpdfstring{$m=1$}{m=1}}
+
+\begin{theorem}
+    \label{nilk1}
+    Let $H$ be a finite nilpotent group such that $d(H/N) \le 1$ for every non-trivial normal subgroup $N$, but $d(H) > 1$. Then $H \cong \mathbb{Z}_p \times \mathbb{Z}_p$ for some prime $p$.
+\end{theorem}
+
+\begin{proof}
+    Since $H$ is nilpotent we have that $H = P_1 \times ... \times P_n$ where $P_i$ is a Sylow $p_i$-subgroup for $1 \le i \le n$ and $p_1,...,p_n$ are distinct primes.
+    
+    Let us remember that for any positive integers $a, b$ if $(a, b) = 1$ then $\mathbb{Z}_a \times \mathbb{Z}_b \cong \mathbb{Z}_{ab}$. If $P_1,..., P_r$ are cyclic, we obtain $H \cong \mathbb{Z}_{p_1...p_n}$  which contradicts $d(H) > 1$.Without loss of generality we can thus assume that $P_1$ is not cyclic. 
+    
+    If $n \ge 2$, $P_1 \cong H/(1 \times P_2 ... \times P_n)$ and thus $d(P_1) = d(H/(1 \times P_2 ... \times P_n)) = 1$, a contradiction. We can then conclude that $H = P_1$.
+
+    By Theorem \ref{th:fratgen}, $\Phi(G) = 1$ hence $H = (\mathbb{Z}_{p_1})^q$ by Theorem \ref{fratpgroup}. 
+    In fact $q = 2$ since $$q-1 = d((\mathbb{Z}_{p_1})^{q-1}) = d(H/(\mathbb{Z}_{p_1} \times 1 \times ... \times 1)) = 1.$$
+\end{proof}
+
+\begin{theorem}
+    Let $H$ be a finite group such that $d(H/N) \le 1$ for every non-trivial normal subgroup $N$, but $d(H) > 1$. Then either $H \cong \mathbb{Z}_p \times \mathbb{Z}_p$ or $H$ is a primitive monolithic group.
+\end{theorem}
+
+\begin{proof}
+    If $H$ is nilpotent by Theorem \ref{nilk1} we have that $H \cong \mathbb{Z}_p \times \mathbb{Z}_p$. We can thus assume that $H$ is not nilpotent.
+
+    Since $H$ is not nilpotent there exists a maximal subgroup $L$ of $H$ such that $L$ is not normal in $H$. We will prove that $\core L = 1$, and thus that $H$ is primitive. 
+    
+    Let's suppose to obtain a contradiction that $\core L \ne 1$. Then by hypothesis $H/\core L$ is cyclic. Now all subgroups of an abelian group are normal and thus $L/\core L$ is a normal subgroup of $H/\core L$. This implies that $L$ is a normal subgroup of $H$ and thus contradicts the assumptions made on $L$. We have proved that $H$ is primitive.
+
+    It remains to show that $H$ is monolithic, i.e. $H$ has a single minimal normal subgroup. To obtain a contradiction, let us suppose $H$ has at least two different minimal normal subgroups (minimal normal subgroups of a group always exist). We have that any minimal normal subgroup $N$ of $H$ is abelian; letting $J$ be a minimal normal subgroup different from $N$ we obtain the following isomorphism between $N$ and a subgroup of the cyclic group $H/J$
+    $$
+        NJ/J \cong N/(J \cap N) \cong N.
+    $$
+    Now since $\soc{H}$ is the product of abelian minimal normal subgroups, it is itself abelian. We thus obtain that, $L \cap \soc{H} \nsub \soc H$. Also $L \cap \soc{H} \nsub L$. Consequently $L \cap \soc{H} \nsub \soc{H}L = H$, since $L$ is maximal with trivial core.
+    Since $\core{L} = 1$ we have that $L \cap \soc{H} = 1$. Similarly for any minimal normal subgroup $N$, $LN=H$ and $L \cap N = 1$. What we obtained was that $L$ is a complement for both any minimal normal subgroup $N$ and $\soc{H}$ in $H$.
+
+    Now since $N \subseteq \soc{H}$ and $\card{L}\card{\soc{H}} = \card{H} = \card{L}\card{N} \implies \card{\soc{H}} = \card{N}$ we obtain that $N = \soc{H}$, that is $N$ is the unique minimal normal subgroup of $H$, a contradiction.
+    %To obtain a contradiction, let's suppose that $H$ has at least two minimal normal subgroups $N_1$ and $N_2$. 
+    %By Theorem $\ref{}$ $H$ is not solvable.
+    %By hypothesis $H/N_1$ and $H/N_2$ are solvable and thus $N_1$ and $N_2$ can not be solvable (otherwise $H$ would be).
+    %We also have $N_1N_2/N_1 \cong N_1 / (N_1 \cap N_2) \cong N_1$ and $N_1N_2/N_1$ is a subgroup of the cyclic group $H/N_1$. We conclude that $N_1$ is also cyclic and thus solvable, a contradiction. We conclude that $H$ has a unique minimal normal subgroup and the proof of the theorem is complete.
+\end{proof}

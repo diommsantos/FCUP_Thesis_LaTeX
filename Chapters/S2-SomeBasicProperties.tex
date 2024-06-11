@@ -1,0 +1,52 @@
+\section{Some basic properties}
+The properties of the groups \(L_k\) will be referenced implicitly throughout.
+
+
+\begin{theorem}
+    \label{altdscLk}
+     The group $L_k$ can be described as $\diag{L^{k}}M^{k}$.
+\end{theorem}
+
+\begin{proof}
+    For any $(l_1,...,l_k) \in L_k$, we have that for any $1 \le i \le k$, $l_1M = l_iM$. Hence it follows $l_i = l_1m_i$ for some $m_i \in M$. We thus have $(l_1,...,l_k) = (l_1,l_1,...,l_1)(1,m_2,...,m_k)$ as pretended. 
+    
+    For the other inclusion it suffices to notice that $M^k, \diag{L^k} \subseteq L_k$, hence $\diag{L^k}M^k \subseteq L_k$.
+\end{proof}
+
+\begin{theorem}
+    The socle of $L_k$ is $M^k$.
+\end{theorem}
+
+\begin{proof}
+    We have by Theorem \ref{hommnsub} that: if $N$ is a minimal normal subgroup of $L_k$ then for all $1 \le i \le k$, $\pi_i(N)$ is either equal to $1$ or a minimal normal subgroup of $L$. Since $L$ has a unique minimal normal subgroup $\pi_i(N) = 1$ or $\pi_i(N) = M$.
+    
+    We thus have $N \subseteq \bigcap_{i=1}^{k} \pi_i^{-1}(M) = M^{k}$. Since the last inclusion holds for any minimal normal subgroup $N$, it easily follows that $\soc{L_k} \subseteq M^k$.
+
+    Since the groups $\Mi$ are minimal normal subgroups of $L_k$, we obviously have $M^k=\Mi[1]...\Mi[k] \subseteq \soc{L_k}$.
+\end{proof}
+
+\begin{theorem}
+    \label{qtLksoc}
+    The group $L_k/M^k$ is isomorphic to $L/M$.
+\end{theorem}
+
+\begin{proof}
+    We have that:
+    $$
+        \frac{L_k}{M^k}=\frac{\diag{L^k}M^k}{M^k} \cong \frac{\diag{L^k}}{\diag{L^k} \cap M^k}
+    $$
+    by the Second Isomorphism Theorem and by Theorem \ref{altdscLk}. 
+    
+    Evidently, $\diag{L_k} \cap M^k = \diag{M^k}$ and thus is easy to verify that $\diag{L^k}/\diag{M^k} \cong L/M$.
+\end{proof}
+
+\begin{theorem}
+    If $M$ is abelian and complemented by $C$ in $L$, then $M^k$ is complemented by $\diag{C^k}$ in $L_k$.
+\end{theorem}
+
+\begin{proof}
+    We have that $\diag{L^k} = \diag{(CM)^k} = \diag{C^k}\diag{M^k}$. 
+    Then by Theorem \ref{altdscLk}, $L_k = \diag{L_k}M^k = \diag{C^k}\diag{M^k}M^k = \diag{C^k}M^k$. 
+    Furthermore for all $x \in \diag{C^k} \cap M^k$ and all $1 \le i \le k$, $\pi_i(x) \in \pi_i(\diag{C^k}) \cap \pi_i(M^k) = C \cap M = 1$. 
+    This means that all the coordinates of $x$ are $1$ and consequently that $x = 1$. The proof is thus complete.
+\end{proof}

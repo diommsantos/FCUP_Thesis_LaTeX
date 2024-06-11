@@ -1,0 +1,22 @@
+\section{Primitive Groups}
+
+An extensive exposition of primitive groups is available on \cite{Ballester-BolinchesCFG}.
+
+\begin{definition}
+    Let $G$ be a group and $L$ a subgroup of $G$. The \textbf{core} of $L$, is the group $\core{L} = \bigcap_{g \in G} gLg^{-1}$.  
+\end{definition}
+
+\begin{theorem}
+    Let $G$ be a group and $L$ a subgroup of $G$. The group $\core{L}$ is the biggest normal subgroup of $G$ contained in $L$, i.e if $N \nsub G$ and $N \subseteq L$ then $N \subseteq \core{L}$.
+\end{theorem}
+
+\begin{proof}
+    That $\core{L} \subseteq L$ is obvious since $\bigcap_{g \in G} gLg^{-1} \subseteq 1L1^{-1} = L$. Now let $N \nsub G$ and $N \subseteq L$. We have that for all $g \in G$, $N = gNg^{-1} \subseteq gLq^{-1}$ and thus it follows that 
+    $$
+    N = \bigcap_{g \in G} gNg^{-1} \subseteq \bigcap_{g \in G} gLg^{-1} = \core{L}.
+    $$
+\end{proof}
+
+\begin{definition}
+    A group $G$ is \textbf{primitive} if it has a maximal subgroup with trivial core.
+\end{definition}

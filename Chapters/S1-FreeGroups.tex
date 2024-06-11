@@ -1,0 +1,30 @@
+\section{Free Groups}
+
+\begin{definition}
+    Let $X$ be a subset of a group $F$. We say that $F$ is a \textbf{free group with basis $X$} if, for every group $G$ and every function $f \colon X \rightarrow G$, there exists a unique homomorphism $\varphi \colon F \rightarrow G$ extending $f$ ($\varphi |_X = f$). In other words denoting by $i \colon X \rightarrow F$ the inclusion, $F$ is a \textbf{free group with basis $X$} if the following diagram commutes 
+    % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiRyJdLFswLDEsIkYiXSxbMCwxLCJmIl0sWzAsMiwiaSIsMl0sWzIsMSwiXFx2YXJwaGkiLDJdXQ==
+    \[\begin{tikzcd}
+        X & G \\
+        F
+        \arrow["f", from=1-1, to=1-2]
+        \arrow["i"', from=1-1, to=2-1]
+        \arrow["\varphi"', from=2-1, to=1-2]
+    \end{tikzcd}.\]
+\end{definition}
+
+\begin{theorem}
+    \cite[p.~344]{RotmanITG}
+    Given a set $X$, there exists a free group with basis $X$.
+\end{theorem}
+
+\begin{theorem}
+    \cite[p.~348]{RotmanITG}
+    Let $F$ and $G$ be free groups with bases $X$ and $Y$, respectively. 
+    Then $F \cong G$ if and only if $\card{X} = \card{Y}$. 
+\end{theorem}
+
+Taking $G$ as $F$ it easily follows from the last theorem that any basis $X$ of a free group $F$ has the same number of elements.
+
+\begin{definition}
+    The \textbf{rank} of a free group $F$, denoted by $\mathbf{rank(F)}$, is the number of elements in a basis of $F$. 
+\end{definition}

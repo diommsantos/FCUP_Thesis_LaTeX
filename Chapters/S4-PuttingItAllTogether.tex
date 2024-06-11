@@ -1,0 +1,194 @@
+\section{Putting It All Together}
+
+
+\begin{definition}
+    Let $F$ be a free group of rank $m$. Given a surjective homomorphism $\beta \colon F \rightarrow L/M$, we define the set $\mathbf{\mathscr{R}_\beta}$ as the set of normal subgroups $N$ of $F$ arising as kernels of those homomorphisms of $F$ onto $L$ which composed with the natural projection $\pi_L \colon L \rightarrow L/M$ yield $\beta$.
+\end{definition}
+
+\begin{definition}
+    Given an automorphism $\alpha$ of $L$ we say that \textbf{$\alpha$ acts trivially on $L/M$} if and only if for all $lM \in L/M$
+    $$
+    \alpha(lM) = lM.
+    $$    
+\end{definition}
+
+Since $L$ has a unique minimal normal subgroup and minimal normal subgroups are sent in minimal normal subgroups via isomorphisms, we have that 
+$$
+\alpha(lM) = lM \iff \alpha(l)\alpha(M) = lM \iff \alpha(l)M = lM.
+$$
+
+\begin{definition}
+    We will denote by $\Gamma$ the set of all automorphisms of $L$ that act trivially on $L/M$.    
+\end{definition}
+
+\begin{theorem}
+    \label{PHallT}
+    Let $F$ be a free group of rank $m \ge d(L)$. Given a surjective homomorphism $\beta \colon F \rightarrow L/M$, the cardinality of the set $\mathscr{R}_{\beta}$ is $\phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$. 
+\end{theorem}
+
+\begin{proof}
+    Let $x_1,..., x_n$ be the canonical basis of $F$. 
+    A surjective homomorphism $\beta : F \longrightarrow L/M$ is uniquely determined by $\beta(x_1) = l_1M, ..., \beta(x_m) = x_mM$, where $L = \subgen{l_1,...,l_m, M}$. 
+    Now let $\gamma : F \longrightarrow L$ be a surjective homomorphism which composed with the natural $L \longrightarrow L/M$ yields $\beta$; we must have $\gamma(x_1) = l_1z_1,...,\gamma(x_m)=l_mz_m$ with $z_1,..., z_m \in M$ and $L = \subgen{l_1z_1,...,l_mz_m}$. By Theorem \ref{GaschutzT} the number of possible choices for $(z_1,...,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$. Now let $\gamma_1, \gamma_2$ be two of these homomorphisms; we claim that $\ker \gamma_1 = \ker \gamma_2 = N$ if and only if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$. 
+    
+    If $\ker \gamma_1 = \ker \gamma_2 = N$, then by the First isomorphism Theorem there exits isomorphisms $\bar{\gamma_1} \colon F/N \rightarrow L$ and $\bar{\gamma_2} \colon F/N \rightarrow L$ such that for all $x \in F$, $\bar{\gamma_1}(xN) = \gamma_1(x)$ and $\bar{\gamma_2}(xN) = \gamma_2(x)$. Now let us consider the isomorphism $\alpha = \bar{\gamma_2} \circ \bar{\gamma_1}^{-1} \colon L \rightarrow L.$ For all $x \in F$, we have that
+    \begin{align*}
+        (\alpha \circ \gamma_1)(x) &=  \bar{\gamma_2} (\bar{\gamma_1}^{-1}\circ \gamma_1(x)) \\
+        &= \bar{\gamma_2}(xN) \\
+        &= \gamma_2(x)
+    \end{align*}
+    where the second equality follows from applying $\bar{\gamma_1}^{-1}$ to $\bar{\gamma_1}(xN) = \gamma_1(x)$. Furthermore for all $x \in F$,
+    $\pi_L \circ \bar{\gamma_1}(xN) = \pi_L \circ \gamma_1(x) = \beta(x) = \pi_L \circ \gamma_2(x) = \pi_L \circ \bar{\gamma_2}(xN)$. Thus it follows that for all $l \in L$, $(\pi_L \circ \alpha)(l) = \pi_L \circ \bar{\gamma_2}(\bar{\gamma_1}^{-1}(l)) = \pi_L \circ \bar{\gamma_1}(\gamma_1^{-1}(l)) = \pi_L(l) = lM$ and hence $\alpha(l)M = (\pi_L \circ \alpha)(l) = lM$.
+
+    On the other hand if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$, then $\ker \gamma_2 = \ker \alpha \circ \gamma_1 = \ker \gamma_1$. Furthermore for all $x \in F$, $\pi_L \circ \gamma_2(x) = \pi_L \circ \alpha \circ \gamma_1(x) = \alpha(\gamma_1(x))M = \gamma_1(x)M = \pi_L \circ \gamma_1(x) = \beta(x)$
+
+    We conclude that the cardinality of $\mathscr{R}_\beta$ is $\phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$.
+\end{proof}
+
+\begin{theorem}
+    \label{QF}
+    Let $F$ be a free group of rank $m \ge d(L)$ and $\beta \colon F \rightarrow L/M$ a surjective homomorphism. The group $F/(\bigcap_{N \in \mathscr{R}_\beta}N)$ is isomorphic to $L_q$ for some positive integer $q$. Furthermore $q$ is the biggest integer for which there exists a surjective homomorphism $\Psi \colon F \rightarrow L_q$ such that 
+    $$ 
+    \pi_{L_q} \circ \Psi = \beta.
+    $$
+\end{theorem}
+
+\begin{proof}
+    By Theorem \ref{PHallT}, $\mathscr{R}_\beta$ is finite so we can assume that $\mathscr{R}_\beta = \left\{ N_1,...,N_r \right\}$.
+
+    Now given $N \in \mathscr{R}_\beta$, let us choose a function $\gamma_N$ such as in the proof of Theorem \ref{PHallT}. Let us also consider the subsequence of $N_1, ..., N_r$:
+    $$N_{i_1} = N_1, ..., N_{i_q}$$
+    where $\bigcap_{n=1}^{j}N_{i_n} \nsubseteq N_{i_{j+1}}$ for $1 \le j \le q-1$. Assuming we have $N_{i_j}$ we choose $N_{i_{j+1}}$ in the following way: $i_{j+1}$ is the smallest number such that $i_{j+1} > i_j$ and $\bigcap_{n=1}^{j}N_{i_n} \nsubseteq N_{i_{j+1}}$; if no such number exists the subsequence is completed.Let us note that $\bigcap_{n = 1}^{q}N_{i_n} = \bigcap_{N \in \mathscr{R}_\beta}N$.
+
+    Through reindexing we can assume that the sequence just constructed is simply $N_1,...,N_q$.
+    And we will prove by induction that for $1 \le s \le q$ the function
+    \begin{align*}
+        \Psi_s \colon &F \rightarrow L_s \\
+                    &x \mapsto (\gamma_{N_1}(x), ... , \gamma_{N_s}(x))
+    \end{align*}
+    is surjective homomorphism with kernel $\bigcap_{i=1}^q N_i$. After this is proved we can easily conclude that $F/(\bigcap_{N \in \mathscr{R}_\beta}N) \cong L_q$ due to $\bigcap_{N \in \mathscr{R}_\beta}N = \bigcap_{i=1}^q N_i$ and the First isomorphism Theorem.
+    
+    For $s = 1$, $\Psi_s = \gamma_{N_1}$ and thus the hypothesis obviously holds. Let us assume now that it holds for $1 \le s < q$.
+
+    That $\Psi_{s+1}$ maps to $L_{s+1}$ is not obvious. For any $1 \le i,j \le q$ we have $\gamma_{N_i}(x)M = \beta(x) = \gamma_{N_j}(x)M$ by the definition of the $\gamma$ functions. Thus $\gamma_{N_1}(x)M = ... = \gamma_{N_{s+1}}(x)M$ and $\Psi_{s+1}$ maps to $L_{s+1}$.
+
+    This function is obviously well defined. 
+    We also easily obtain that $\ker \Psi_{s+1} = \bigcap_{i=1}^{q} N_i =\bigcap_{N \in \mathscr{R}_\beta}N$ since for any $1 \le i \le k$, $\ker \gamma_{N_i} = N_i$.
+
+    To check surjectivity let us first notice that, 
+    $$M \subseteq \gamma_{N_{s+1}}(\bigcap_{i=1}^s N_i) \text{ and } \gamma_{N_{j}}(\bigcap_{i=1}^s N_i) = 1 \text{ for } 1 \le j \le s.$$ 
+    This holds because $\bigcap_{i=1}^s N_i$ is a normal subgroup in $F$ not contained in $\ker \gamma_{N_{s+1}} = N_{s+1}$ and as $\gamma_{N_{s+1}}$ is surjective the image of $\bigcap_{i=1}^s N_i$ is a non-trivial normal group of $L$. 
+    Such a normal subgroup must contain a minimal normal subgroup and $M$ is the unique such subgroup, thus it contains it. 
+    Furthermore for $1 \le j \le s$, $\gamma_{N_j}(\bigcap_{i=1}^s N_i) = 1$ since $\bigcap_{i=1}^s N_i \subseteq N_j = \ker \gamma_{N_j}$. 
+    
+    Let us also notice that for all $x \in F$, $\Psi_{s+1}(x) = (\Psi_{s}(x), \gamma_{N_{s+1}}(x))$.
+
+    Thus given $(lm_1, ..., lm_{s+1}) \in L_{s+1}$ by the induction hypothesis there is some $x \in F$ such that $\Psi_{s}(x) = (lm_1, ..., lm_s)$.
+    Since $lM = \gamma_{N_1}(x)M = \gamma_{s+1}(x)M$, $\gamma_{s+1}(x) = lm_x$ for some $m_x \in M$. 
+    Consider now the element $xy \in F$ where $y \in \bigcap_{i=1}^s N_i$ and $\gamma_{s+1}(y) = m_x^{-1}m_{s+1}$ (such $y$ exists due to $M \subseteq \gamma_{N_{s+1}}(\bigcap_{i=1}^s N_i)$).
+    Then 
+    \begin{align*}
+        \Psi_{s+1}(xy) &=  (\Psi_{s}(xy), \gamma_{N_{s+1}}(xy)) \\ 
+        &= (\gamma_{N_1}(xy), ..., \gamma_{N_{s+1}}(xy)) \\
+        &= (\gamma_{N_1}(x)\gamma_{N_1}(y), ..., \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
+        &= (\gamma_{N_1}(x), ...,\gamma_{N_s}(x), \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
+        &= (lm_1, ...,lm_s, lm_xm_x^{-1}m_{s+1}) = (lm_1, ..., lm_{s+1}) 
+    \end{align*}
+    where the fourth equality follows from $y \in \bigcap_{i=1}^s N_i = \bigcap_{i = 1}^s \ker \gamma_{N_i}$. Surjectivity and the first part of the theorem is thus proved. It is now only necessary to prove that there is no quotient of $F$ isomorphic to some $L_k$ for some $k > q$.
+
+    Let us suppose to obtain a contradiction that for some $k > q$ there is a surjective homomorphism $\Psi$ between $F$ and $L_k$ such that $\pi_{L_k} \circ \Psi = \beta$. 
+    Let us consider the natural projection $\pi_L \colon L \rightarrow L/M$.
+
+    For $1 \le i \le k$ let us also consider the surjective homomorphisms $\gamma_i = \pi_i \circ \Psi \colon F \rightarrow L$.
+    The following diagrams help to keep track of the homomorphisms
+    $$
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAZAfQGsQBfUuky58hFGWLU6TVuw4ChIDNjwEi5CtIYs2iEADFFw1WKIAWLTR1z9RwSdHqUAViszd8gPQBZY8pE1cWRLKWtZPU5-FSdggCZ3G0iOXwFpGCgAc3giUAAzACcIAFskTRAcCCQyEEZ6ACMYRgAFQLN9Rhg8nBBwz30AHQG0LC4sf0KSpASKqsRypPYh5uwJotLEGcrqvtsQIcz6YuL6MbWpxABmGm3ES1qGptbTZ1qunt3IoaY0AAt6c4bNyzJD3RaDYajBQ0OqNFptV6dbqApDXEGIYHg-YDQ7HU7jGGPeEvcQgApYTK-HoOECTDblW4ANk+S0hXGA3B4-BRiBqTJZEJGXGhDzhz1i7HJlOplH4QA
+\begin{tikzcd}
+    F \arrow[r, "\Psi"] \arrow[rd, "\gamma_i"] & L_k \arrow[d, "\pi_i"] \arrow[r, "\pi_{L_k}"] & L/M &  & F \arrow[r, "\alpha"] \arrow[d, "\gamma_i"'] & L/M \\
+                                               & L \arrow[ru, "\pi_L"']                        &     &  & L \arrow[ru, "\pi_L"]                        &    
+    \end{tikzcd}.
+    $$
+    Now obviously $\Psi(x) = (\gamma_1(x), ..., \gamma_k(x))$ and thus
+    $$K = \ker \Psi = \bigcap_{i=1}^{q} \ker \gamma_i.$$
+    Furthermore for all $1 \le i \le k$ and all $x \in F$,
+    \begin{align*}
+        \beta(x) &= \pi_{L_k} \circ \Psi(x) \\
+                  &= \pi_i(\Psi(x))M \\
+                  &= \pi_L \circ \gamma_i(x) 
+    \end{align*}
+   and thus $\ker \gamma_i \in \mathscr{R}_\beta$.
+   We obtain that $\bigcap_{N \in \mathscr{R}_\beta}N \subseteq \bigcap_{i=1}^{q} \ker \gamma_i = K$ 
+   and this is obviously a contradiction since 
+    $F/(\bigcap_{N \in \mathscr{R}_\beta}N) \cong L_q$ but $F/K \cong L_k$. 
+
+\end{proof}
+
+\begin{theorem}
+    Let $m \ge d(L)$ and $q$ be the number of $(L/M)$-endomorphisms of $M$. Then 
+    $$
+    f(m) = 1 +
+    \begin{cases}
+        \phi_L(m)/(\card{\Gamma}\phi_{L/M}(m)) & \text{if } M \text{ is not abelian,} \\
+        log_q(1+(q-1)\phi_L(m)/\card{\Gamma}\phi_{L/M}(m)) & \text{if } M \text{ is abelian.} \\
+    \end{cases}
+    $$
+\end{theorem}
+
+\begin{proof}
+    Let $F$ denote a free group with rank $m$. Since an homomorphism from $F$ is totally determined by the images of its canonical base and $L/M$ is a finite group, there are a finite number of surjective homomorphisms from $F$ to $L/M$. By Theorem \ref{QF} each such surjective homomorphism $\alpha$ has an associated biggest integer $s$ and surjective homomorphism $\Psi$ such that $\pi_{L_s} \circ \Psi = \alpha$ and thus we can consider the finite set of all such integers $s$. We can now set $k$ as the maximum of such set, $\beta \colon F \rightarrow L/M$ and $\Psi_k \colon F \rightarrow L_k$ the associated homomorphisms and $R = \ker \Psi_k = (\bigcap_{N \in \mathscr{R}_\beta}N)$.
+    
+    Let us note that if for some $K \nsub F$, there exists an isomorphism $\phi$ between $F/K$ and $L_i$ for some $i$ then $\phi$ induces a surjective homomorphism from $F$ to $L/M$, namely $\pi_{L_k} \circ \phi \circ \pi$ where $\pi \colon F \rightarrow F/K$ is the natural projection.
+    By the remarks above and our choice of $k$, $F/R$ is the largest quotient of $F$ isomorphic to $L_i$ for some $i$; since $F$ is a free group of rank $m$ this means that 
+    $$
+    f(m) = 1 + k.
+    $$
+    Now by the Correspondence Theorem the function $\upsilon \colon N \mapsto N/R$ is a bijection from the family of all those subgroups $N$ of $F$ which contain $R$ to the family of all the subgroups of $F/R$. Furthermore if we denote by $\phi$ the isomorphism $F/R = F/\ker \Psi_k \cong L_k$ resulting from the First isomorphism Theorem, we can define the induced bijection $\bar{\phi} \colon N \mapsto \phi(N)$ that maps subgroups of $F/R$ to subgroups of $L_k$. Now consider the bijection $\sigma = \bar{\phi} \circ \upsilon$ from the family of all those subgroups $N$ of $F$ which contain $R$ to all subgroups of $L_k$. 
+    
+    
+    We claim that the restriction of $\sigma$ to $\mathscr{R}_\beta$ is a bijection between $\mathscr{R}_\beta$ and $\mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$. We need only to prove that if $N \in \mathscr{R}_\beta$ then $\sigma{(N)} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$ and if $K \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$ then $\sigma^{-1}(K) \in \mathscr{R}_\beta$. To do so let us first denote by $\pi \colon F \rightarrow F/R$ the natural projection and notice that
+    \begin{align*}
+        \bar{\beta} \colon & F/R \rightarrow L/M \\
+        & xN \mapsto \beta(x)
+    \end{align*}
+    is a well defined (since $R \subseteq \ker \beta$) surjective homomorphism that satisfies $\bar{\beta} \circ \pi  = \beta$. Given a surjective homomorphism such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$, let us also consider
+    \begin{align*}
+        \gamma_{N/R} \colon & F/R \rightarrow L \\
+        & xN \mapsto \gamma_N(x);
+    \end{align*}
+    this is also a well defined (since $R \subseteq \ker \gamma_N$) homomorphism with the property $\gamma_{N/R} \circ \pi = \gamma_N$. Since $\pi$ is surjective we also obtain
+    $$
+    \pi_L \circ \gamma_N = \beta \implies \pi_L \circ \gamma_{N/R} \circ \pi = \bar{\beta} \circ \pi \implies \pi_L \circ \gamma_{N/R} = \bar{\beta}.
+    $$  
+    The following diagram helps visualize the homomorphisms:
+    % https://q.uiver.app/#q=WzAsNSxbMSwxLCJGL1IiXSxbMiwxLCJML00iXSxbMSwyLCJMIl0sWzEsMCwiRiJdLFswLDEsIkxfayJdLFsyLDEsIlxccGlfTCIsMl0sWzAsMSwiXFxiYXJ7XFxiZXRhfSJdLFs0LDIsIlxcZ2FtbWFfSyIsMl0sWzMsMCwiXFxwaSJdLFszLDEsIlxcYmV0YSJdLFswLDIsIlxcb3ZlcmxpbmV7XFxnYW1tYV9OfSJdLFswLDQsIlxccGhpIiwyXV0=
+    \[\begin{tikzcd}
+        & F \\
+        {L_k} & {F/R} & {L/M} \\
+        & L
+        \arrow["{\pi_L}"', from=3-2, to=2-3]
+        \arrow["{\bar{\beta}}", from=2-2, to=2-3]
+        \arrow["{\gamma_K}"', from=2-1, to=3-2]
+        \arrow["\pi", from=1-2, to=2-2]
+        \arrow["\beta", from=1-2, to=2-3]
+        \arrow["{\gamma_{N/R}}", from=2-2, to=3-2]
+        \arrow["\phi"', from=2-2, to=2-1]
+    \end{tikzcd}\]
+
+    If $N \in \mathscr{R}_\beta$ then there exists a surjective homomorphism $\gamma_N \colon F \rightarrow L$ such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$. Now $\pi_L \circ \gamma_{N/R} \circ \phi^{-1} = \bar{\beta} \circ \phi^{-1}$ and thus $\ker {\gamma_{N/R} \circ \phi^{-1}} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$. Since $\phi$ is an isomorphism $\ker{\gamma_{N/R} \circ \phi^{-1}} = \phi^{-1}(\ker \gamma_{N/R}) = \phi(N/R)$. We thus conclude that 
+    $$\sigma(N) = \phi(N/R) = \ker{\gamma_{N/R} \circ \phi^{-1}} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}.$$   
+
+
+    If $K \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$ then there exists a surjective homomorphism $\gamma_K \colon L_k \rightarrow L$ such that $\ker \gamma_K = K$ and $\pi_L \circ \gamma_K = \bar{\beta} \circ \phi^{-1}$. 
+    Now $ \pi_L \circ \gamma_K \circ \phi \circ \pi = \bar{\beta} \circ \phi^{-1} \circ \phi \circ \pi = \bar{\beta} \circ \pi = \beta$ and thus $\ker{\gamma_K \circ \phi \circ \pi} \in \mathscr{R}_\beta$. Also $\ker{\gamma_K \circ \phi \circ \pi} = \pi^{-1}(\phi^{-1}(\ker \gamma_K)) = \pi^{-1}(\phi^{-1}(K))$.
+    We thus conclude that $\sigma^{-1}(K) = \pi^{-1}(\phi^{-1}(K)) = \ker{\gamma_K \circ \phi \circ \pi} \in \mathscr{R}_\beta$. 
+
+    Now by Theorems \ref{cardS} and \ref{PHallT} we obtain:
+    $$
+    \frac{\phi_L(m)}{\card{\Gamma}\phi_{L/M}(m)} = \card{\mathscr{R}} = \card{\mathscr{S}} = 
+    \begin{cases}
+        k & \text{if } M \text{ is not abelian,} \\
+        (q^k-1)/(q-1) & \text{if } M \text{ is abelian.} \\
+    \end{cases}
+    $$
+    Since $k = f(m)-1$, the proof is complete.    
+\end{proof}

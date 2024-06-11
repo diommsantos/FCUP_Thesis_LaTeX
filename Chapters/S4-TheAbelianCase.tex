@@ -1,0 +1,97 @@
+\section{The M abelian case}
+
+\newcommand{\dc}[0]{\dot{c}}
+
+If $M$ is abelian then it is complemented by $C$ in $L$. Furthermore it was already proved that $\diag {C^k}$ complements $M^k$ in $L_k$. To simplify notation, given $c \in C$ we will denote by $\dc \in \diag{C^k}$ the element with all coordinates equal to $c$ and by $\dot{C} = \diag{C^k}$.
+
+Now we can define the following group action:
+
+\begin{align*}
+    \cdot \colon C \times M^k &\rightarrow M^k \\
+                (c, m)  &\mapsto \dc^{-1}m\dc.
+\end{align*}
+
+Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, its restriction to $\dot{C}$ is an isomorphism. This is easily seen, since
+
+$$
+\ker{\beta|_{\dot C}} = \ker \beta \cap \dot{C} = M^k \cap \dot{C} = 1;
+$$ comparing orders we get $\card{\dot{C}} = \card{L/M}$ and thus $\beta|_{\dot C}$ is an injective function between finite sets of the same cardinality, i.e a bijection. 
+
+The restriction of the projection
+\begin{align*}
+    \pi_L \colon C &\rightarrow L/M \\
+                 c &\mapsto cM
+\end{align*}
+to $C$, denoted by $\pi_L|_C$, is also an isomorphism, since it is a surjection ($L/M = CM/M$) between groups of the same order.
+
+We can thus define the isomorphism $\rho = (\pi_L|_C)^{-1} \circ \beta|_{\dot C} \colon \dot{C} \rightarrow C$. Such an isomorphism $\rho$ has the important property $\pi_L \circ \rho = \beta|_{\dot C}$.
+
+We have thus the necessary conditions to define the group action
+
+\begin{align*}
+    \cdot \colon C \times M &\rightarrow M \\
+                (c, m)  &\mapsto \rho(\dc)^{-1}m\rho(\dc).
+\end{align*}
+
+
+\begin{theorem}
+    \label{S4:LMhom}
+    Let us assume $M$ is abelian. Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, the set $\mathscr{S}_\beta$ is identical to the set of kernels of surjective $C$-homomorphisms $\nu \colon M^k \rightarrow M$ with the above group actions.
+\end{theorem}
+
+\begin{proof}
+    To prove the first inclusion, let $N \in \mathscr{S}_\beta$. Then there exists a surjective homomorphism $\varphi$ such that $\ker \varphi = N$ and $\pi_L \circ \varphi = \beta$. We will now prove that the restriction of $\varphi$ to $M^k$ is a $C$-homomorphism with kernel $N$.
+
+
+    Since $\varphi$ is surjective we obtain that $\varphi|_{M^k}(\soc {L_k}) \subseteq \soc{L} = M$ by Theorem \ref{hommnsub}. Furthermore since $\pi_L \circ \varphi = \beta$, $\ker \varphi$ is strictly contained in $\ker \beta = M^k$ and thus $\varphi(M^k)$ is a non-trivial normal subgroup in $L$. Since $M$ is a minimal normal subgroup we conclude that $\varphi(M^k) = M$; from this also follows that $\varphi(\dot{C}) = C$.
+
+    That $\ker \varphi|_{M^k} = N$ is obvious.
+
+    Now
+    \begin{align*}
+        \pi_L \circ \varphi = \beta &\implies \pi_L|_{\dot C} \circ \varphi|_{\dot C} = \beta|_{\dot C} \\
+                                    &\iff \varphi|_{\dot C} = (\pi_L|_{\dot C})^{-1} \circ \beta|_{\dot C} \\
+                                    &\iff \varphi|_{\dot C} = \rho. 
+    \end{align*} 
+
+    Thus for any $\dc \in \dot{C}$ and any $m \in M^k$
+    \begin{align*}
+        \varphi|_{M^k}(\dc \cdot m) &= \varphi(\dc^{-1} m \dc) \\
+                                    &= \varphi(\dc^{-1}) \varphi(m) \varphi(\dc) \\
+                                    &= \rho(\dc^{-1})\varphi(m) \rho(\dc) \\
+                                    &= \dc \cdot \varphi|_{M^k}(m),
+    \end{align*}
+    and the proof of this inclusion is complete.
+
+    To prove the other inclusion, let $\nu$ be a $C$-homomorphism. 
+    Let us first define
+    \begin{align*}
+        \psi \colon L_k &\rightarrow L \\
+                \dc m &\mapsto \rho(\dc)\nu(m),
+    \end{align*}
+    where $\dc \in \dot C$ and $m \in M^k$.
+    This function is well-defined since $\dot{C}$ and $M^k$ are complements. Its kernel is $\ker \psi = (\ker \rho) (\ker \nu) = \ker \nu$ and is easily seen to be surjective. Also, it is a homomorphism since for any $\dc_1, \dc_2 \in \dot{C}$ and $m_1, m_2 \in M^k$,
+    \begin{align*}
+        \psi(\dc_1 m_1 \dc_2 m_2) &= \psi(\dc_1 \dc_2 m_1^{\dc_2^{-1}} m_2) \\
+                                   &= \rho(\dc_1 \dc_2) \nu(m_1^{\dc_2^{-1}}) \nu(m_2) \\
+                                   &= \rho(\dc_1) \rho(\dc_2) \nu(\dc_2 \cdot m_1) \nu(m_2) \\
+                                   &= \rho(\dc_1) \rho(\dc_2) (\dc_2 \cdot \nu(m_1)) \nu(m_2) \\
+                                   &= \rho(\dc_1) \rho(\dc_2) \nu(m_1)^{\rho(\dc_2)^{-1}} \nu(m_2) \\
+                                   &= \rho(\dc_1) \nu(m_1) \rho(\dc_2) \nu(m_2) \\
+                                   &= \psi(\dc_1 m_1) \psi(\dc_2 m_2).
+    \end{align*}
+    We also easily verify that $\pi_L \circ \psi(\dc m) = \pi_L(\psi(\dc))\pi_L(\psi(m))=\pi_L(\rho(\dc)) = \beta(\dc)$.
+    \end{proof}
+
+    \begin{theorem}
+        \label{cardSA}
+        Let us assume that $M$ is abelian. Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, the cardinality of the set $\mathscr{S}_\beta$ is $k$ when $M$ is non-abelian; it is $(q^k-1)/(q-1)$ when $M$ is abelian and $q$ is the number of $(L/M)$-endomorphisms of $M$.
+    \end{theorem}
+
+    \begin{proof}
+        If $M$ is abelian, by Theorem \ref{S4:LMhom} we have to count the kernels of surjective $(L/M)$-homomorphisms from $M^k$ to $M$ and there are $(q^k-1)/(q-1)$ of these where $q$ is the number of $(L/M)$-endomorphisms of $M$.
+    \end{proof}
+
+
+
+

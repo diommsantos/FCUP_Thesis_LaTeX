@@ -1,0 +1,202 @@
+\section{Lucchini's Theorem}
+
+\begin{theorem}
+    \label{phireq}
+    Let $H$ be a finite group and $N_1$, $N_r$ two different minimal normal subgroups of $H$ complemented by $K_r$. If the projections $\pi_r : K_r \cap (N_1 \times N_r) \rightarrow N_1$, $\rho_r : K_r \cap (N_1 \times N_r) \rightarrow N_r$ are isomorphisms then $K_r \cap (N_1 \times N_r) = \left\{x\phi_r(x) | x \in N_1\right\}$ where $\phi_r = \rho_r\pi_r^{-1}$.
+\end{theorem}
+
+\begin{proof}
+    For the inclusion $K_r \cap (N_1 \times N_r) \subseteq \left\{x\phi_r(x) | x \in N_1\right\}$ let $n_1n_r \in K_r \cap (N_1 \times N_r)$ where $n_1 \in N_1$ and $n_r \in N_r$.
+    Since $\pi_r$ is one-to-one, $\pi^{-1}_r(n_1) = n_1n_r$, and thus $\phi_r(n_1) = \rho_r(\pi^{-1}_r(n_1)) = \rho_r(n_1n_r) = n_r$. We obtain that $n_1n_r = n_1\phi_r(n_1) \in \left\{x\phi_r(x) | x \in N_1\right\}$.
+
+    For the other inclusion, let $x \in N_1$. Obviously 
+    $\pi_r^{-1}(x) \in K_r \cap (N_1 \times N_r)$. 
+    We thus have $\pi_r^{-1}(x) = n_1n_r \in K_r \cap (N_1 \times N_r)$  where $n_1 \in N_1$ and $n_r \in N_r$. 
+    Now $x = \pi_r(\pi_r^{-1}(x)) = \pi_r(n_1n_r) = n_1$. 
+    Furthermore $\phi_r(x) = \rho_r(\pi_r^{-1}(x)) = \rho_r(n_1n_r) = n_r$. Thus we conclude $x\phi_r(x) = n_1n_r \in K_r \cap (N_1 \times N_r)$.
+\end{proof}
+
+\begin{theorem}
+    \label{imgaut}
+    Let $H$ be a finite group and $N_1$ be a non-abelian minimal normal subgroup of $H$. Let also $\alpha_1: H \rightarrow \aut N_1$ be the homomorphism that sends $h$ to the function
+    \begin{align*}
+        \gamma_h \colon &N_1 \rightarrow N_1 \\
+                        &x \mapsto hxh^{-1},
+    \end{align*}
+    and $L$ be the image of $\alpha_1$. 
+    Then $L$ has a unique minimal normal subgroup, namely $\inn N_1$.
+\end{theorem}
+
+\begin{proof}
+    By Theorem \ref{hommnsub} we have that $\inn N_1 = \alpha_1(N_1)$ is either a minimal normal subgroup of $L$ or $1$. 
+    
+    Since $N_1$ is non abelian then there are $n_1, n_2 \in N_1$ such that $n_1n_2 \neq n_2n_1$. Therefore we have that $\alpha_1(n_1) = \gamma_{n_1} \neq 1$ as $1(n_2) = n_2 \neq n_1n_2n_1^{-1} = \gamma_{n_1}(n_2)$. Thus $\inn N_1$ is not $1$, and hence is a minimal normal subgroup of $L$.
+
+    To check that $\inn N_1$ is the unique minimal normal subgroup of $L$ we will verify that for every non-trivial normal subgroup $N$ of $L$, $\inn N_1 \subseteq N$. 
+    
+    Let $N$ be a subgroup in the above conditions. Then $\alpha^{-1}(N)$ is normal in $H$. Furthermore since $N_1$ is a minimal normal subgroup, $\alpha^{-1}(N) \cap N_1$ is either $1$ or $N_1$. We will check that $\alpha^{-1}(N) \cap N_1$ must be $N_1$.
+
+    If $\alpha^{-1}(N) \cap N_1 = 1$ then $[\alpha^{-1}(N), N_1] \le \alpha^{-1}(N) \cap N_1 = 1$, that is the elements of $N_1$ commute with the elements of $\alpha^{-1}(N)$. Thus for all $h \in \alpha^{-1}(N)$, $\gamma_h(x) = hxh^{-1} = hh^{-1}x = x$. Therefore $N = \alpha_1(\alpha^{-1}(N)) = 1$. This is a contradiction, and so $\alpha^{-1}(N) \cap N_1 = N_1$.
+    Obviously it now follows from $N_1 \subseteq \alpha^{-1}(N)$ that $\alpha_1(N_1) \subseteq \alpha_1(\alpha_1^{-1}(N)) = N$ as we wanted to prove.
+\end{proof}
+
+\begin{theorem}
+    Let $m$ be an integer with $m \ge 1$ and $H$ a finite group such that $d(H/N) \le m$ for every non-trivial normal subgroup $N$, but $d(H) > m$. Then there exists a group $L$ which has a unique minimal normal subgroup $M$ and is such that $M$ is either non-abelian or complemented in $L$ and $H \cong L_q$ for some positive integer $q$.
+\end{theorem}
+\begin{proof}
+    Since $d(H/N) \le m$ for every non-trivial normal subgroup $N$, by Theorem \ref{th:fratgen} we have that $\Phi(H) = 1$.
+    
+    We are going to consider two cases: first the case where $H$ has only one minimal normal subgroup and later the case where $H$ has more than one minimal normal subgroup. Furthermore each such case will be divided into the case where those minimal subgroups are abelian and the case where they are not abelian (as will be seen these are the only possible cases).
+
+    \vspace{\baselineskip}
+    \noindent
+    \textbf{$H$ has a unique minimal normal subgroup:}
+    \vspace{\baselineskip}
+
+    Consider the case in which $H$ has a unique minimal normal subgroup, say $M$. 
+    Taking $L$ as $H$ gives the result for the subcase in which $M$ is non-abelian.
+    If $M$ is abelian since $\Phi(H) = 1$, there exists a maximal subgroup $K$ of $H$ such that $K$ does not contain $M$. 
+    Since $K$ is maximal and does not contain $M$, $KM = H$. 
+    Furthermore by the hypothesis on $K$, $K \cap M$ is a strictly contained normal subgroup of $M$ ($M$ is abelian). Obviously since $M$ is normal in $H$, $K \cap M$ is normal in $K$. We thus have $K \cap M$ is normal in $KM$ an thus in $H=KM$. We have obtained that $K \cap M$ is normal in $H$ and strictly contained in the minimal normal subgroup $M$, so we conclude that $K \cap M = 1$. It was thus proved that $K$ is the desired complement and we can take $L$ as $H$.   
+
+    \vspace{\baselineskip}
+    \noindent
+    \textbf{$H$ has more than one minimal normal subgroup:}
+    \vspace{\baselineskip}
+
+    We can now assume that $H$ contains at least two different minimal normal subgroups. 
+    Let us denote these minimal normal subgroups as $N_1, ...,N_r, ...$. 
+    Since $d(H/N_1) \le m$ by assumption, there exist $m$ elements $h_1,...,h_m$ of $H$ such that $H = \subgen{h_1,...h_m, N_1}$. Now consider $N_r$ with $r \ne 1$. Certainly, $H = \subgen{h_1,...,h_m,N_1N_r}$. Moreover as $H/N_1N_r$ is isomorphic to the quotient $(H/N_r)/(N_1N_r/N_r)$ of $H/N_r$ and $H/N_r$ is generated by at most $m$ elements, by Theorem \ref{GaschutzT} there exists $m$ elements $x_1,...,x_m \in N_1$ such that $\subgen{h_1x_1,...,h_mx_m,N_r} = H$.
+
+    Consider the subgroup $K_r = \subgen{h_1x_1,...,h_mx_m}$. We assert that $N_1$ and $N_r$ both serve as complements for $K_r$ within $H$.
+    
+    Clearly, $H = K_rN_1 = K_rN_r$; hence, we only need to demonstrate that $K_r \cap N_1 = K_r \cap N_r = 1$. We claim that the intersection $K_r \cap N_1$ is a normal subgroup of $K_rN_r = H$. In fact as $[N_1, N_r] \le N_1 \cap N_r = 1$, for any $k_r \in K_r$, $n_r \in N_r$:
+    $$ 
+    k_rn_r(K_r \cap N_1)n_r^{-1}k_r^{-1} = k_rn_rn_r^{-1}(K_r \cap N_1)k_r^{-1} = K_r \cap N_1 
+    $$
+    where the first equality follows from the commutativity between the elements of $N_1$ and $N_r$ and the second from the normality of $K_r \cap N_1$ in $K_r$.
+    As the normal subgroup $K_r \cap N_1$ is contained in the minimal normal subgroup $N_1$ of $H$, if $K_r \cap N_1 \ne 1$ then $N_1 \cap K_r = N_1$. And consequently $H = K_rN_1 = K_r$ is $m$-generated, which contradicts our hypothesis. The claim $K_r \cap N_r = 1$ is proved similarly.
+
+    We can now prove that the projections $\pi_r : K_r \cap (N_1 \times N_r) \rightarrow N_1$ and $\rho_r : K_r \cap (N_1 \times N_r) \rightarrow N_r$ are isomorphisms. 
+    Let us start with $\pi_r$: The kernel of $\pi_r$ is a subgroup of $N_r \cap K_r$, which is trivial since $N_r$ and $K_r$ have trivial intersection. Therefore, $\pi_r$ is injective. 
+    Furthermore, for any $n_1 \in N_1$, there exists $t \in K_r$ and $n_r \in N_r$ such that $n_1 = tn_r$. Thus, $t = n_1n_r^{-1} \in (N_1 \times N_r) \cap K_r$, and $\pi_r(t) = n_1$. Hence, $\pi_r$ is also surjective.
+    Similar arguments can be applied to $\rho_r$.
+
+    What we conclude from this is that for each $r > 1$, there exists a subgroup $K_r$ which serves as a complement for both $N_1$ and $N_r$, and there exists an isomorphism $\phi_r : N_1 \rightarrow N_r$ (specifically, $\phi_r = \rho_r\pi_r^{-1}$) such that $K_r \cap (N_1 \times N_r) = \left\{x\phi_r(x) | x \in N_1\right\}$. 
+    The equality $K_r \cap (N_1 \times N_r) = \left\{x\phi_r(x) | x \in N_1\right\}$ follows from Theorem \ref{phireq}.
+    Using the fact that this intersection is normal in $K_r$, we claim that $\phi_r$ is a $K_r$-isomorphism, that is for any $k \in K_r$, $k \cdot \phi_r(x) = \phi_r(k \cdot x) \iff k\phi_r(x)k^{-1} = \phi_r(kxk^{-1})$ . We have that for any $k \in K_r$, $x \in N_1$, $kx\phi_r(x)k^{-1} = y\phi_r(y)$ for some $y \in N_1$ hence:
+    \begin{align*}
+        &kxk^{-1}k\phi_r(x)k^{-1} = y\phi_r(y)\\
+        \iff &y^{-1}kxk^{-1} = \phi_r(y)k^{-1}\phi_r(x)^{-1}k \in N_1 \cap N_r = 1\\
+        \implies &y = kxk^{-1} \text{ and } k\phi_r(x)k^{-1} = \phi_r(y) = \phi_r(kxk^{-1})
+    \end{align*}
+
+    \vspace{\baselineskip}
+    \noindent
+    \textbf{Abelian minimal normal subgroups sub-case:}
+    \vspace{\baselineskip}
+
+    Suppose now that $N_1$ (and consequently any minimal normal subgroup since they are isomorphic) is abelian. We are now going to construct an isomorphism $\Psi$ from $H$ to a group $L_q$.
+
+    By Theorem \ref{th:SocC}, $\soc H$ is complemented in $H$ say by $K$.
+    Knowing also that $\soc H$ is the direct product of some minimal normal subgroups, say $\soc H = N_1 \times...\times N_q$, for $1 \le i \le q$, $N_i$ is complemented in $\soc H$ by $C_i = N_1 \times ... \times N_{i-1} \times 1 \times N_{i+1} \times ... \times N_q$.
+    Consider the functions $\chi_i : \soc H \rightarrow N_i$ that send $n_ic_i$ to $n_i$ for any $n_i \in N_i$, $c_i \in C_i$.
+    It is routine to prove that for any $i$, $\chi_i$ is a surjective $K_i$-homomorphism with $\ker \chi_i = C_i$.
+    Obviously $\Psi_i = \phi_i^{-1} \circ \chi_i \colon \soc{H} \rightarrow N_1$ is a surjective $K_i$-homomorphism with $\ker \chi_i = C_i$ for any $i$.
+
+    Setting $L=KN_1$ we can define the following function:
+    \begin{align*}
+        \Psi \colon &H \longrightarrow L_q \\
+                 &ks \mapsto  (k\Psi_1(s),k\Psi_2(s),...,k\Psi_q(s))
+    \end{align*}
+    where $k \in K$ and $s \in \soc H$. 
+    
+    We show that $\Psi$ is in fact an isomorphism.
+
+    This function is well defined since if $k_1s_1 = k_2s_2$ then $k_2^{-1}k_1 = s_2s_1^{-1} \in C \cap \soc H = 1$ which implies $k_1 = k_2$ and $s_1 = s_2$. 
+    Consequently for any $i$, $\Psi_i(s_1) = \Psi_i(s_2)$, therefore $$(k_1\Psi_1(s_1),k_1\Psi_2(s_1),...,k_1\Psi_q(s_1)) = (k_2\Psi_1(s_2),k_2\Psi_2(s_2),...,k_2\Psi_q(s_2)).$$
+
+    This function is a homomorphism since
+    \begin{align*}
+        \Psi(k_1s_1k_2s_2) & = \Psi(k_1(k_2k_2^{-1})s_1k_2s_2) \\
+                           & = \Psi(k_1k_2s_1^{k_2^{-1}}s_2) \\ 
+                           & = (k_1k_2\Psi_1(s_1^{k_2^{-1}}s_2),k_1k_2\Psi_2(s_1^{k_2^{-1}}s_2),...,k_1k_2\Psi_q(s_1^{k_2^{-1}}s_2)) \\
+                           & = (k_1k_2\Psi_1(s_1)^{k_2^{-1}}\Psi(s_2),k_1k_2\Psi_2(s_1)^{k_2^{-1}}\Psi(s_2),...,k_1k_2\Psi_q(s_1)^{k_2^{-1}}\Psi(s_2)) \\
+                           & = (k_1\Psi_1(s_1),k_1\Psi_2(s_1),...,k_1\Psi_q(s_1))(k_2\Psi_1(s_2),k_2\Psi_2(s_2),...,k_2\Psi_q(s_2)) \\
+                           & = \Psi(k_1s_1)\Psi(k_2s_2)
+    \end{align*}
+    To check injectivity we need only to notice that if $ks \in \ker \Psi$ then $k^{-1} = \Psi_1(s) = ... = \Psi_q(s)$. Since $K \cap N_1 = 1$ we have that $k = 1$ and $\Psi_1(s) = ... = \Psi_q(s) = 1$. Noting that 
+    $s \in \cap_{i=1}^q \ker \Psi_i = 1$ we have proven injectivity.
+
+    Comparing orders we get surjectivity since $$\card{H} = \card{K}\card{\soc{H}} = \card{K}\card{N_1}^q = \card{L_q}$$. The abelian case is thus finished.
+\end{proof}
+
+\vspace{\baselineskip}
+\noindent
+\textbf{Non-abelian minimal normal subgroups sub-case:}
+\vspace{\baselineskip}
+
+We assume that $N_1$ is non-abelian. 
+
+Consider the homomorphism $\alpha_1 \colon H \rightarrow \aut N_1$ that sends each $h \in H$ to
+\begin{align*}
+    \alpha_1(h) \colon &N_1 \rightarrow N_1 \\
+                    &x \mapsto hxh^{-1}.
+\end{align*}
+
+We will denote by $L$ the image of $\alpha_1$. By Theorem \ref{imgaut}, $L$ has a unique minimal normal subgroup $M = \inn N_1$. For $r > 1$, we define $\alpha_r \colon H \rightarrow \aut N_1$ as the homomorphism that sends $h \in H$ to
+\begin{align*}
+    \alpha_r(h) \colon &N_1 \rightarrow N_1 \\
+                    &x \mapsto \phi_r^{-1}(h\phi_r(x)h^{-1}).
+\end{align*}
+
+Given that $H = K_rN_1$, we can represent each $h \in H$ as $h = uv$ where $u \in K_r$ and $v \in N_1$. Consequently,
+\begin{align*}
+    \phi_r^{-1}(h\phi_r(x)h^{-1}) &= \phi_r^{-1}(uv\phi_r(x)v^{-1}u^{-1}) = \phi_r^{-1}(uvv^{-1}\phi_r(x)u^{-1}) \\
+    &= \phi_r^{-1}(\phi_r(x^{u})) = x^u = (x^h)^{v^{-1}}.
+\end{align*}
+Here, the second equality holds because $N_1$ centralizes $N_r$, and the third equality due to the fact that $\phi_r$ is a $K_r$-isomorphism.
+We thus have that $\alpha_r(h) = \gamma_{v^{-1}}(\alpha_1(h))$ where $\gamma_{v^{-1}}$ is conjugation by $v^{-1}$.
+
+We obtain that 
+
+$$
+\alpha_1(h)M = ... = \alpha_r(h)M. 
+$$
+It thus follows that for any $1 \le i \le r$, $L = \alpha_1(H) = \alpha_1(H)M = \alpha_i(H)M = \alpha_i(H)$.
+
+Taking $q$ as the number of minimal normal subgroups of $H$, let us consider now the function
+\begin{align*}
+    \Psi \colon &H \rightarrow L_q \\
+                &h \mapsto (\alpha_1(h),..., \alpha_q(h)).
+\end{align*}
+We will prove that this function is an isomorphism.
+Obviously it is well defined and is an homomorphism since the $\alpha_r$ are homomorphisms. To check injectivity let us first notice that the kernel of $\Psi$ is the intersection of the kernels of the $\alpha_r$. 
+
+If $h \in \ker \alpha_r$ then for all $x \in N_1$, $\phi_r^{-1}(h\phi_r(x)h^{-1}) = x \iff h\phi_r(x) = \phi_r(x)h$. Since $\phi_r$ is an isomorphism this means that $h$ centralizes $N_r$. Obviously if $h$ centralizes $N_r$, $h \in \ker \alpha_r$ and thus we conclude that $\ker \alpha_r$ is the centralizer of $N_r$. 
+
+Since the minimal normal subgroups $N_r$ are not contained in their own centralizers, $\ker \Psi$ is a normal subgroup of $H$ that does not contain any minimal normal subgroup. 
+We obtain that $\ker \Psi = 1$  and injectivity is thus proved.
+
+It is now at last only necessary to prove surjectivity. Given $h \in H$ we will use the auxiliary notation $\gamma_h$ to denote the function
+\begin{align*}
+    \gamma_h &\colon N_1 \rightarrow N_1 \\
+             &x \mapsto hxh^{-1}
+\end{align*}
+and $\phi_1 \colon N_1 \rightarrow N_1$ to denote the identity function.
+Let $(\gamma_{m_1}\gamma_k,...,\gamma_{m_q}\gamma_k) \in L_q$ where $k \in K_r$ and $m_1,...,m_q \in N_1$. 
+Consider the element $$k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q) \in H.$$ 
+Now for $1 \le r \le q$ and $x \in N_1$
+\begin{align*}
+    \alpha_r(k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q))(x) &= \phi_r^{-1}(\phi_r(x)^{k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q)}) \\
+    &= \phi_r^{-1}(\phi_r(x)^{k\phi_r(m_r)}) \\
+    &= \phi_r^{-1}(\phi_r(x^k)^{\phi_r(m_r)}) \\
+    &= m_rkxk^{-1}m_r^{-1} = \gamma_{m_rk}(x)
+\end{align*}
+where the second equality follows from the fact that $N_1,...,N_{r-1},N_{r+1}...,N_q$ centralize $N_r$ and the third from $\phi_r$ being a $K_r$-isomorphism. We thus conclude that
+$$
+\Psi(k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q)) = (\gamma_{m_1}\gamma_k,...,\gamma_{m_q}\gamma_k)
+$$
+and surjectivity is proved.
+
+The non-abelian subcase is thus completed.

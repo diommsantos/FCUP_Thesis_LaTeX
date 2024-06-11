@@ -1,0 +1,85 @@
+\section{Normal subgroups and quotients of \texorpdfstring{$L_k$}{Lk}}
+
+\begin{theorem}
+    The quotient of $L_{k+1}$ by any of its minimal normal subgroups is isomorphic to $L_k$.
+\end{theorem}
+
+\begin{proof}
+    Let $N$ be a minimal normal subgroup of $L_{k+1}$.
+
+    If $M$ is not abelian, by Theorem \ref{nabmnsub}, $N = \Mi$ for some $1 \le i \le k+1$. Is trivial to verify that
+    \begin{align*}
+        \psi \colon &L_{k+1} \longrightarrow L_k \\
+                (l_1,.&..,l_k+1) \mapsto (l_1,...,l_{i-1},l_{i+1},...,l_{k+1})
+    \end{align*}
+    is a surjective homomorphism. We will now verify that $\ker \psi = \Mi = N$. Obviously $\Mi \subseteq \ker \psi$ as the $i$-th coordinate is "forgotten" and that is the only non $1$ coordinate in $\Mi$. For the other inclusion, we first have by Theorem \ref{qtLksoc} that $\card{L_k} = \card{L/M} \card{M}^k$. By the First Isomorphism Theorem, $\card{L_{k+1}}/\card{\ker{psi}} = \card{L_k}$. From this two equalities follows that $\card{\ker \psi} = \card{\Mi} = \card \Mi$. Therefore $\ker \psi = \Mi = N$ and consequently
+    $L_{k+1}/N = L_{k+1}/\ker \psi \cong L_k$ by the First Isomorphism Theorem.
+
+    If $M$ is abelian, by hypothesis we have that $M$ is complemented in $L$ say by $C_L$. Thus if $q$ is a positive integer:
+    \begin{align*}
+        L_q &= \diag{L^q}M^q = \diag{(C_LM)^q} \\
+                &= \diag{C_L^q}\diag{M^q}M^q = \diag{C_L^q}M^q.
+    \end{align*}
+    It is also easy to verify using the definition of $C_L$ that $\diag{C_L^q} \cap M^q = 1$.
+
+    By Theorem \ref{cplNsoc}, we have that $N$ is complemented in $M^{k+1}$ and that its complement, say $C_{\soc{L}}$, is normal in $L_{k+1}$ and isomorphic to $M^{k}$. 
+    As $\diag{C_L^{k+1}}$ complements $M^{k+1}$, by Theorem \ref{smdptrans} we have that $N$ is complemented in $L_{k+1}$ by $C=\diag{C_L^{k+1}}C_{\soc L_{k+1}}$.
+
+    Then we obtain:
+    \begin{align*}
+        L_{k+1}/N = CN/N \cong C/(C \cap N) = C/1 \cong C,
+    \end{align*}
+    using the Second Isomorphism Theorem.
+
+    Now we need to show that $C = \diag{C_L^{k+1}}C_{\soc L_{k+1}} \cong L_k$. Let $\psi$ be the function defined by
+    \begin{align*}
+        \psi \colon C & \rightarrow L_k=\diag{C_L^k}M^k \\
+                    \dl s &\mapsto \dl \phi(s)
+    \end{align*}
+    where $l \in C_L^{k+1}$ and $s \in C_{\soc{L_{k+1}}}$ and $\phi$ is the isomorphism from Theorem \ref{cplNsoc}.
+
+    Let $l_1, l_2 \in C_L$ and $s_1, s_2 \in C_{\soc{L_{k+1}}}$.
+    To see that $\psi$ is well defined it suffices to notice that if $\dl_1s_1 = \dl_2s_2$ then:
+    \begin{align*}
+        &\dl_2^{-1}\dl_1 = s_2s_1^{-1} \in C_L^{k+1} \cap C_{\soc{L_{k+1}}} = 1 \\
+        \implies & \dl_2 = \dl_1, s_1 = s_2 \\
+        \implies & \dl_1\phi(s_1) = \dl_2\phi(s_2)
+    \end{align*}
+
+    Knowing that $\phi$ is an isomorphism, is easy to see that $\psi$ is surjective since every element $\dl m \in L_k$ (where $\dl \in \diag{C_L^k}$ and $m \in M^k$) is the image by $\psi$ of $\dl\phi^{-1}(m)$.
+
+    Injectivity follows comparing the orders of $C$ and $L_k$. We have
+    $$
+    \card{C} = \card{L_{k+1}} / \card{N} = \card{L_k}
+    $$
+    remembering that $C$ complements $N$ in $L_{k+1}$ and that $\card{N} = \card{M}$.
+    We thus conclude that $\psi$ is a bijection, since it is a surjection between finite groups of equal orders.
+
+    Now we need only to check that $\psi$ is a homomorphism, which follows from:
+    \begin{align*}
+        \psi(\dl_1s_1\dl_2s_2) &= 
+    \psi(\dl_1\dl_2s_1^{\dl_2^{-1}}s_2)\\
+    &= \dl_1\dl_2\phi(s_1^{\dl_2^{-1}}s_2)\\
+    &=\dl_1\dl_2\phi(s_1^{\dl_2^{-1}})\phi(s_2)\\
+    &=\dl_1\dl_2\phi(s_1)^{\dl_2^{-1}}\phi(s_2)\\
+    &=\dl_1\phi(s_1)\dl_2\phi(s_2)\\
+    &= \psi(\dl_1s_1)\psi(\dl_2s_2).
+    \end{align*}
+\end{proof}
+
+\begin{theorem}
+    \label{th:nsubsoc}
+    Let $N$ be a normal group of $L_k$. Then either $\soc L_k \le N$ or $N \le \soc{L_k}$.
+\end{theorem}
+
+\begin{proof}
+    The proof will be done by induction on $k$.
+
+    Since $L$ has a unique minimal normal subgroup the proposition is easily seen to be true for $k=1$.
+    
+    Suppose now that the result holds for $k$ and that $N$ is not a subgroup of $\soc{L_{k+1}}$. Then there exists a minimal normal subgroup $U$ of $L_{k+1}$ such that $U \subseteq N$.
+    We have that $L_{k+1}/U \cong L_{k}$ by some isomorphism $f$.
+    By induction either $\soc{L_{k}} \le f(N/U)$ or $f(N/U) \le \soc{L_k}$. Since $N$ is not a subgroup of $\soc{L_{k+1}}$ we have that $\soc{L_{k+1}}/U \nleqslant N/U$ which implies that $\soc(L_k) = f(\soc{L_{k+1}/U}) \nleqslant f(N/U)$ and thus the first case holds.
+    
+    Applying $f^{-1}$ to $\soc L_{k} \le f(N/U)$ we get $(\soc{L_{k+1}})/U = \soc{L_{k+1}/U} \le N/U$. Hence as $U \subseteq \soc{L_{k+1}}, N$ we obtain $\soc{L_{k+1}} = \pi^{-1}(\soc{L_{k+1}/U}) \le \pi^{-1}(N/U) = N$, where $\pi: L_k \rightarrow L_k/U$ is the usual projection.
+\end{proof}

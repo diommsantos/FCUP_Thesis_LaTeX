@@ -1,0 +1,23 @@
+\section{Semidirect Products}
+
+\begin{definition}
+    Let $K$ be a subgroup of a group $G$. A subgroup $Q \subseteq G$ is a \textbf{complement} of $K$ in $G$ if $K \cap Q = \{1\}$ and $KQ = G$.
+\end{definition}
+
+\begin{definition}
+    A group $G$ is a \textbf{semidirect product} of $K$ by $Q$, denoted by $G = K \rtimes Q$, if $K \nsub G$ and $K$ has a complement $Q' \cong Q$.
+
+\end{definition}
+
+The next theorem can be considered as transitivity for semidirect products.
+
+\begin{theorem}
+\label{smdptrans}
+Let $G \le H \le K$ be groups, if $G$ is complemented in $H$, its complement is normal in $K$ and $H$ is complemented in $K$ then $G$ is complemented in $K$.
+\end{theorem}
+
+\begin{proof}
+    Let $H'$ be the complement of $H$ in $K$ and $G'$ the complement of $G$ in $H$. Since by hypothesis $G'$ is normal in $K$ we have that $H'G'$ is a group. Also by hypothesis we have that:
+    $G = H'H =H'(G'G) = (H'G')G$.
+    Furthermore $H'G' \cap G = 1$ because if $g \in G \cap H'G'$ then $g = h'g'$ for some $h' \in H'$ and $g' \in G'$. We have that $gg'^{-1} = h' \in H' \cap GG' = H' \cap H = 1$ and so it follows that $h' = 1$ and that $g = g' \in G \cap G' = 1$.
+\end{proof}

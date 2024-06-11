@@ -1,0 +1,34 @@
+\section{Minimal Normal Subgroups}
+
+\begin{definition}
+    A \textbf{minimal normal subgroup $M$} of a group $H$ is a normal subgroup of $H$ such that for any non-trivial normal subgroup $N$ of $H$ if $N \subseteq M$ then $N = M$.
+\end{definition}
+
+\begin{theorem}
+    \label{hommnsub}
+    Given a surjective homomorphism $\alpha\colon G \rightarrow H$ and $M$ a minimal normal subgroup of $G$, $\alpha(M)$ is either a minimal normal subgroup of $H$ or $1$.
+\end{theorem}
+\begin{proof}
+    Let us assume that $\alpha(M)$ is neither a minimal normal subgroup of $H$ neither $1$.
+
+    Since $\alpha$ is surjective, we have that $\alpha(M)$ is normal in $H$, and by assumption there is a normal subgroup $N$ strictly contained in $\alpha(M)$.
+    
+    Obviously $\alpha^{-1}(N)$ is normal in $G$. Considering now the normal subgroup $\alpha^{-1}(N) \cap M$ we see that it is non-trivial and strictly contained in $M$, contradicting the minimality of $M$.
+\end{proof}
+
+\begin{definition}
+    \label{S1:groupcommutator}
+    Let $G$ be a group. If $H, K \le G$, then
+    $$
+    [H,K] = \left\{ hkh^{-1}k^{-1} | h \in H and k \in K \right\}.
+    $$ 
+\end{definition}
+
+\begin{theorem}
+    \label{mnsubsc}
+    If $M_1$ and $M_2$ are distinct minimal normal subgroups then they centralize each other.
+\end{theorem}
+
+\begin{proof}
+    We have that $[ M_1, M_2] \le M_1 \cap M_2$ and as $M_1 \ne M_2$, $M_1 \cap M_2 = 1$.
+\end{proof}

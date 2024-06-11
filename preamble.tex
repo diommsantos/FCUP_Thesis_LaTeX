@@ -57,6 +57,8 @@
 
 % Graphics stuff
 \usepackage{graphicx}  % invoked by svg
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
 % Specifies the directory where pictures are stored
 \graphicspath{{Figures/}}
 
@@ -67,6 +69,7 @@
 % Math stuff
 \usepackage{amsmath} % Interesting environments
 \usepackage{amssymb} % Interesting symbols
+\usepackage{mathrsfs}
 \usepackage{commath} % Interesting macros
 \usepackage{braket} % Dirac bra-ket and set notations
 \usepackage{mathpazo} % Math font (palatino for Computer Modern on math)
@@ -83,6 +86,18 @@
 \newcommand{\ja}{\pazocal{J}}
 %Custom math operators
 \DeclareMathOperator*{\meshgrid}{meshgrid}
+\newcommand{\subgen}[1]{\langle #1 \rangle}
+\newcommand{\card}[1]{| #1 |}
+\newcommand{\nsub}{\triangleleft}
+\newcommand{\cmpl}[1]{\overline{ #1 }}
+\newcommand{\dt}[2]{(#1)_{#2}}
+\newcommand{\soc}[1]{soc {(#1)}}
+\newcommand{\diag}[1]{diag({#1})}
+\newcommand{\Mi}[1][i]{M_{#1}}
+\newcommand{\dl}[0]{\dot{l}}
+\newcommand{\core}[1]{core({#1})}
+\newcommand{\aut}[1]{Aut\, {#1}}
+\newcommand{\inn}[1]{Inn\, {#1}}
 % Floor and ceiling of numbers
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}

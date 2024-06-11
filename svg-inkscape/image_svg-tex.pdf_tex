@@ -77,6 +77,6 @@
     \put(0.60314564,0.48794021){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{image_svg-tex.pdf}}%
     \put(0.50068431,0.35201764){\color[rgb]{0,0,0}\rotatebox{-36.04952341}{\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}TikZ this$\rightarrow$\end{tabular}}}}}%
-    \put(0.72136512,0.26564522){\color[rgb]{0,0,1}\transparent{0.5}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}transparent\end{tabular}}}}%
+    \put(0.72136512,0.26564522){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}transparent\end{tabular}}}}%
   \end{picture}%
 \endgroup%

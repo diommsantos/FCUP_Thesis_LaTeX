@@ -1,0 +1,28 @@
+\chapter{The Function \texorpdfstring{$f$}{f}}
+
+The purpose of this section is to determine a way to calculate $f(L,m)$. Once again, most of the ideas in this section were originally exposed in \cite{DallaVoltaFGNMGAPQ} and more detail was provided here.
+To aid us in this end, we will denote by $\pi_{L_k}$ the surjective homomorphism
+\begin{align*}
+    \pi_{L_k} \colon L_k &\rightarrow L/M \\
+                        x &\mapsto \pi_1(x)M.
+\end{align*}
+It is easy to verify that such a function is well defined and is a surjective homomorphism. Furthermore let us notice that the choice of $\pi_1$ in the definition of $\pi_{L_k}$ is completely arbitrary; any of the $\pi_i$ functions serve as from the definition of $L_k$, 
+$\pi_1(x)M = ... = \pi_k(x)M$.
+The following definition will prove to be crucial to the calculation of $f(L,m)$.
+\begin{definition}
+    Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, we define the set $\mathscr{S}_\beta$ as the set of normal subgroups $N$ of $L_k$ arising as kernels of those homomorphisms of $L_k$ onto $L$ which composed with the natural projection $\pi_L \colon L \rightarrow L/M$ yield $\beta$.
+\end{definition}
+
+\begin{theorem}
+    Given a surjective homomorphism $\beta \colon L_k \rightarrow L/M$, $\ker \beta = M^k$.
+\end{theorem}
+
+\begin{proof}
+    We have that $\card{L_k}/\card{\ker \beta} = \card{L}/\card{M} \implies \card{\ker \beta} = \card{M^k}$ and hence by Theorem \ref{th:nsubsoc} we have $\ker \beta = \soc{L_k}$.
+\end{proof}
+
+\input{Chapters/S4-TheAbelianCase}
+
+\input{Chapters/S4-InsightsOnTheMnonAbelianCase.tex}
+
+\input{Chapters/S4-PuttingItAllTogether.tex}

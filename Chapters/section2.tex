@@ -1,0 +1,28 @@
+\chapter{The groups \texorpdfstring{$L_k$}{Lk}} \label{TheGroupsLk}
+
+In this section $L$ will always denote a finite group with a unique minimal normal subgroup $M$. Furthermore if $M$ is abelian, we can also assume that $M$ is complemented in $L$.
+
+Given a positive integer $k$ we will denote by $L^{k}$ the $k$-fold direct power of $L$ and by $\diag{L^{k}}$ the subgroup $\{(l_1,...,l_k) \in L^k | l_1 = l_2 = ... = l_k\}$. If not explicitly said otherwise, we will assume throughout this section that $k$ is a positive integer.
+
+Also $\pi_i$ will denote the projection of the $i$-th coordinate from $L^k$ onto $L$ and $\Mi = 1\times ... \times M \times ... \times 1$ the subgroup of $L^k$ whose elements have some $m \in M$ for the $i$-th coordinate and $1$ for the rest.
+
+\begin{definition}
+    Given a positive integer $k$, the group $L_k$ is a subgroup of $L^{k}$ defined by:
+    $$
+    L_k = \{ (l_1,...,l_k) \in L^k | l_1M = ... = l_kM \}.
+    $$
+\end{definition}
+
+Let $k$ be a positive integer.
+We will often simply write $\pi_i$ to denote $\pi_i|_{L_k}$, the restriction of $\pi_i$ to $L_k$. One property of the functions $\pi_i|_{L_k}$ is that given $S \subseteq L$,
+$$
+\pi_i|_{L_k}^{-1}(S) = \pi_i^{-1}(S) \cap L_k.
+$$
+Thus it follows that $\pi_i|_{L_k}^{-1}(M) = \pi_i^{-1}(M) \cap L_k = (L \times ... L \times M \times L .... \times L) \cap L_k = M^k$.
+\input{Chapters/S2-SomeBasicProperties.tex}
+
+\input{Chapters/S2-TheMinimalNormalSubgroupsofLk.tex}
+
+\input{Chapters/S2-TheQuotientsOfLkByMinimalNormalSubgroups.tex}
+
+\input{Chapters/S2-TheSequencedLi.tex}
