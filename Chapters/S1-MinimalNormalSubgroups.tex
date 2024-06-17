@@ -1,8 +1,16 @@
 \section{Minimal Normal Subgroups}
 
 \begin{definition}
-    A \textbf{minimal normal subgroup $M$} of a group $H$ is a normal subgroup of $H$ such that for any non-trivial normal subgroup $N$ of $H$ if $N \subseteq M$ then $N = M$.
+A normal subgroup $M$ of a group $G$ is said to be a \textbf{minimal normal subgroup} if it is non-trivial and has no proper non-trivial normal subgroup.
 \end{definition}
+
+There are groups without minimal normal subgroups. One example is the additive group $\mathbb{Z}$. Any subgroup of $\mathbb{Z}$ (all subgroups of $\mathbb{Z}$ are normal) is of the form $m\mathbb{Z}$ for some positive integer $m$. Taking the subgroup $2m\mathbb{Z}$ we get a non-trivial normal subgroup contained in $m\mathbb{Z}$.
+
+On the other hand minimal normal subgroups always exist for non-trivial finite groups. Let us suppose there is a finite group $H$ without a minimal normal subgroup. Then we can construct the following chain of normal subgroups of $H$,
+$$
+H > M_1 > M_2 > ...
+$$
+were each subgroup $M$ is strictly contained in the one before. Since none of this groups by assumption can be a minimal normal subgroup we can prolong this chain forever and thus arise at a contradiction on the finiteness of $H$.
 
 \begin{theorem}
     \label{hommnsub}
@@ -17,12 +25,25 @@
 \end{proof}
 
 \begin{definition}
+    Let $x$ and $y$ be elements of a group $G$. We define the \textbf{commutator of $x$ and $y$} as 
+    $$
+    [x,y] = hkh^{-1}k^{-1}.
+    $$
+\end{definition}
+
+Let us notice that the commutator of two elements is the identity if and only if they commute with each other.
+
+Similarly we can define the commutator of two subgroups.
+
+\begin{definition}
     \label{S1:groupcommutator}
     Let $G$ be a group. If $H, K \le G$, then
     $$
     [H,K] = \left\{ hkh^{-1}k^{-1} | h \in H and k \in K \right\}.
     $$ 
 \end{definition}
+
+Likewise if $H,K \le G$, $[H,K] = 1$ if and only if all the elements of $H$ commute with all the elements of $K$.
 
 \begin{theorem}
     \label{mnsubsc}

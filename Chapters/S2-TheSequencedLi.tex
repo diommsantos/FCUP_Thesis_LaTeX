@@ -3,6 +3,25 @@
 The sequence $d(L^i)_{i \in \mathbb{N}}$ is called the \textit{growth sequence} and has been studied in \cite{WiegoldGSFG, WiegoldGSFGII, WiegoldGSFGIII, WiegoldGSFGIV}. Given the importance that the groups $L_k$ assume in the study of the minimal number of generators of finite groups, in this section we will study some properties of the sequence $d(L_i)_{i \in \mathbb{N}}$. 
 
 \begin{theorem}
+    The sequence $d(L_k)_{k \in \mathbb{N}}$ is non-decreasing.
+\end{theorem}
+
+\begin{proof}
+    Let us assume to obtain a contradiction that there is some positive integer $k$ such that $d(L_{k+1}) < d(L_k)$. 
+    
+    Let us consider the function $\rho: L_{k+1} \rightarrow L_k$ that drops the last coordinate. That is given $(x_1,...,x_{k+1}) \in L_{k+1}$, $\rho((x_1,...,x_{k+1})) = (x_1,...,x_{k+1})$.
+
+    Now let $l_1,...,l_m$ be a minimal generating set of $L_{k+1}$, that is $
+    \subgen{l_1,...,l_m} = L_{k+1}$ and $d(L_{k+1}) = m$.
+    Obviously $\rho$ is surjective and thus we obtain that 
+    $$
+    L_k = \rho(L_{k+1}) = \rho(\subgen{l_1,...,l_m}) = \subgen{\rho(l_1),...,\rho(l_m)}.
+    $$
+    This is of course a contradiction since we assumed that $m = d(L_{k+1}) < d(L_k)$.
+\end{proof}
+
+\begin{theorem}
+    \label{S2:bounddLk}
     $d(L_{k+1}) \le d(L_k) + 1$    
 \end{theorem}
 \begin{proof}
@@ -20,6 +39,7 @@ The sequence $d(L^i)_{i \in \mathbb{N}}$ is called the \textit{growth sequence} 
 \end{proof}
 
 \begin{theorem}
+    \label{S2:undLk}
     The sequence $d(L_1),...,d(L_k), ....$ is unlimited.
 \end{theorem}
 

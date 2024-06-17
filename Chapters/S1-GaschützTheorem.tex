@@ -7,6 +7,7 @@
 The last Theorem of this section was first proved by Gaschütz in \cite{GaschützZENGP}. We present here an alternative proof from Roquette adapted from \cite[p.~360]{FriedFA}.
 
 \begin{theorem}
+    \label{S1:GT}
     Let $\theta : G \rightarrow H$ be a surjective homomorphism of finite groups with $d(G) \le m$. 
     Let $\mathbf{h} = (h_1, ..., h_m)$ be a tuple that generates $H$.
     Then there exists a tuple of generators $\mathbf{g}=(g_1, ..., g_m)$ of $G$ such that $\theta(g_i) = h_i$, $i = 1,...,m$.
@@ -38,5 +39,5 @@ The last Theorem of this section was first proved by Gaschütz in \cite{Gaschüt
     Moreover the cardinality of the set $$\left\{(u_1,...,u_m) \in N^m | G = \subgen{g_1u_1, ..., g_mu_m} \right\}$$ is independent of the choice of $g_1, ..., g_m$.
 \end{theorem}
 \begin{proof}
-    Setting $H = G/N$, $\theta$ to be the natural projection and $h_i = g_iN$ in the last theorem we get that there are $z_1, ..., z_m \in G$ such that $\theta(z_i) = z_iN = g_iN$ and that $\subgen{z_1, ..., z_m} = G$. Since $z_iN = g_iN$ we have that $z_i = g_iu_i$ for a unique $u_i \in N$ for all $i$. Hence the theorem follows.
+By applying Theorem \ref{S1:GT}, where $H$ is taken to be the quotient group $G/N$, $\theta \colon G \rightarrow G/N$ is the natural projection, and $h_i = g_iN$, we can find elements $z_1, ..., z_m \in G$ such that $\theta(z_i) = z_iN = g_iN$ and $\subgen{z_1, ..., z_m} = G$. Since $z_iN = g_iN$, we have $z_i = g_iu_i$ for a unique $u_i \in N$ for all $i$, which leads to the desired conclusion.
 \end{proof}

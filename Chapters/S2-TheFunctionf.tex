@@ -1,0 +1,13 @@
+\section{The function \texorpdfstring{$f$}{f}}
+
+Given that the sequence $d(L_k)_{k \in \mathbb{N}}$ is unlimited by Theorem \ref{S2:undLk} and that for all positive integer $k$, $d(L_{k+1}) \le d(L_k) + 1$ by Theorem \ref{S2:bounddLk} we are now in conditions to define the function $f$. This function will play a key role in finding out the minimal number of generators of a finite group.
+
+Before providing the definition, let us remember that we are assuming $L$ to always denote a finite group with a unique minimal normal subgroup $M$, complemented if $M$ is abelian.
+
+\begin{definition}
+    Given a group $L$ we define $f(L, m) = k+1$ if and only if $d(L_k) = m < d(L_{k+1})$. When $L$ can be identified from the context, we denote $f(L,m)$ as $f(m)$.
+\end{definition}
+
+Let us notice that this function of course depends on the group $L$ being considered and that the domain of this function is the positive integers. 
+
+Furthermore this function is well defined. Let $m_1 = m_2$ be two positive integers. Then since $d(L_k)_{k \in \mathbb{N}}$ is non-decreasing and unlimited there is some positive integer $k$ such that $d(L_k) = m_1 = m_2 < d(L_{k+1})$. Since the sequence is non-decreasing this number $k$ must be unique and thus $f(L,m_1) = k+1 = f(L,m_2)$.
