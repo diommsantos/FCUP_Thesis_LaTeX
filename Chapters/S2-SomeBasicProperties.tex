@@ -20,7 +20,7 @@ The properties of the groups \(L_k\) will be referenced implicitly throughout.
 \begin{proof}
     We have by Theorem \ref{hommnsub} that: if $N$ is a minimal normal subgroup of $L_k$ then for all $1 \le i \le k$, $\pi_i(N)$ is either equal to $1$ or a minimal normal subgroup of $L$. Since $L$ has a unique minimal normal subgroup $\pi_i(N) = 1$ or $\pi_i(N) = M$.
     
-    We thus have $N \subseteq \bigcap_{i=1}^{k} \pi_i^{-1}(M) = M^{k}$. Since the last inclusion holds for any minimal normal subgroup $N$, it easily follows that $\soc{L_k} \subseteq M^k$.
+    We thus have $N \subseteq \bigcap_{i=1}^{k} \pi_i|_{L_k}^{-1}(M) = M^{k}$. Since the last inclusion holds for any minimal normal subgroup $N$, it easily follows that $\soc{L_k} \subseteq M^k$.
 
     Since the groups $\Mi$ are minimal normal subgroups of $L_k$, we obviously have $M^k=\Mi[1]...\Mi[k] \subseteq \soc{L_k}$.
 \end{proof}
@@ -46,7 +46,7 @@ The properties of the groups \(L_k\) will be referenced implicitly throughout.
 
 \begin{proof}
     We have that $\diag{L^k} = \diag{(CM)^k} = \diag{C^k}\diag{M^k}$. 
-    Then by Theorem \ref{altdscLk}, $L_k = \diag{L_k}M^k = \diag{C^k}\diag{M^k}M^k = \diag{C^k}M^k$. 
+    Then by Theorem \ref{altdscLk}, $L_k = \diag{L^k}M^k = \diag{C^k}\diag{M^k}M^k = \diag{C^k}M^k$. 
     Furthermore for all $x \in \diag{C^k} \cap M^k$ and all $1 \le i \le k$, $\pi_i(x) \in \pi_i(\diag{C^k}) \cap \pi_i(M^k) = C \cap M = 1$. 
     This means that all the coordinates of $x$ are $1$ and consequently that $x = 1$. The proof is thus complete.
 \end{proof}
