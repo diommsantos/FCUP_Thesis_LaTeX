@@ -1,4 +1,4 @@
-\section{Lucchini's Theorem}
+\section{An important structural Theorem}
 
 \begin{theorem}
     \label{phireq}
@@ -41,7 +41,7 @@
 \end{proof}
 
 \begin{theorem}
-    Let $m$ be an integer with $m \ge 1$ and $H$ a finite group such that $d(H/N) \le m$ for every non-trivial normal subgroup $N$, but $d(H) > m$. Then there exists a group $L$ which has a unique minimal normal subgroup $M$ and is such that $M$ is either non-abelian or complemented in $L$ and $H \cong L_q$ for some positive integer $q$.
+    Let $m$ be an integer with $m \ge 1$ and $H$ a finite group such that $d(H/N) \le m$ for every non-trivial normal subgroup $N$, but $d(H) > m$. Then there exists a group $L$ which has a unique minimal normal subgroup $M$ and is such that $M$ is either non-abelian or complemented in $L$ and $H \cong L_{f(L,m)}$.
 \end{theorem}
 \begin{proof}
     Since $d(H/N) \le m$ for every non-trivial normal subgroup $N$, by Theorem \ref{th:fratgen} we have that $\Phi(H) = 1$.
@@ -200,3 +200,11 @@ $$
 and surjectivity is proved.
 
 The non-abelian subcase is thus completed.
+
+\vspace{2em}
+
+Regardless of which case we consider, what was proved was that $H \cong L_q$ for some positive integer $q$ by some isomorphism $\Psi$. Since the image of a minimal normal subgroup by an isomorphism is again a minimal normal subgroup we obtain that for any minimal normal subgroup $N_r$ of $H$, $H/N_r \cong L_{q}/\Psi(N_r)$ and applying Theorem \ref{S2:QLkmnsub} $H/N_r \cong L_{q-1}$. Since $H/N_r$ is a proper non-trivial quotient of $H$ we get that
+$$
+d(L_{q-1}) = d(H/N_r) < d(H) = d(L_q).
+$$
+This is precisely the definition of the function $f$, that is $f(L,m) = q$ and the proof of the theorem is complete. 

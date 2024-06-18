@@ -1,13 +1,26 @@
 \section{The function \texorpdfstring{$f$}{f}}
 
-Given that the sequence $d(L_k)_{k \in \mathbb{N}}$ is unlimited by Theorem \ref{S2:undLk} and that for all positive integer $k$, $d(L_{k+1}) \le d(L_k) + 1$ by Theorem \ref{S2:bounddLk} we are now in conditions to define the function $f$. This function will play a key role in finding out the minimal number of generators of a finite group.
+We are now in conditions to define the function $f$. This function will play a key role in finding out the minimal number of generators of a finite group.
 
-Before providing the definition, let us remember that we are assuming $L$ to always denote a finite group with a unique minimal normal subgroup $M$, complemented if $M$ is abelian.
+Before providing the definition, let us remember that we are assuming $L$ to always denote a finite group with a unique minimal normal subgroup $M$, complemented if $M$ is abelian. Furthermore we will define $L_0$ as $L/M$.
 
 \begin{definition}
     Given a group $L$ we define $f(L, m) = k+1$ if and only if $d(L_k) = m < d(L_{k+1})$. When $L$ can be identified from the context, we denote $f(L,m)$ as $f(m)$.
 \end{definition}
 
+The function $f$ gives us the integer $k+1$ for which $d(L_{k+1}) = m + 1$ is bigger than any $d(L_q)$ for $q < k+1$ (we are implicitly using Theorem \ref{S2:bounddLk} in this claim). 
+
+We claim that any proper quotient of $L_{k+1}$ has a minimal number of generators smaller than or equal to $m$. 
+Let $N$ be a non-trivial normal subgroup of $L_{k+1}$. 
+There is a minimal normal subgroup $M$ contained in $N$ and  thus by Theorem \ref{S2:QLkmnsub} we obtain that $d(L_{k+1} / M) = d(L_k) \le m$. 
+Now using the Third Isomorphism Theorem and the fact that the minimal number of generators of a quotient is always smaller or equal than the ambient group we obtain
+$$
+d(L_{k+1}/N) = d(\frac{L_{k+1}/M}{N/M}) \le d(L_{k+1} / M) = d(L_k) = m.
+$$
+Thus the function $f$ gives us \textit{the integer $k+1$ for which any proper quotient of $L_{k+1}$ has minimal number of generators smaller or equal to $m$ but $d(L_{k+1}) > m$.}
+
+In light of this new characterization of the function $f$, our reason for our definition of $L_0$ is now justified, that is $f(m) = 1$ iff $d(L_0) = d(L/M) < d(L)$. 
+
 Let us notice that this function of course depends on the group $L$ being considered and that the domain of this function is the positive integers. 
 
-Furthermore this function is well defined. Let $m_1 = m_2$ be two positive integers. Then since $d(L_k)_{k \in \mathbb{N}}$ is non-decreasing and unlimited there is some positive integer $k$ such that $d(L_k) = m_1 = m_2 < d(L_{k+1})$. Since the sequence is non-decreasing this number $k$ must be unique and thus $f(L,m_1) = k+1 = f(L,m_2)$.
+Furthermore this function is well defined. Let $m_1 = m_2$ be two positive integers. Then since $d(L_k)_{k \in \mathbb{N}}$ is non-decreasing by Theorem \ref{S2:nondecLk} and unlimited by Theorem \ref{S2:undLk} there is some positive integer $k$ such that $d(L_k) = m_1 = m_2 < d(L_{k+1})$. Since the sequence is non-decreasing this number $k$ must be unique and thus $f(L,m_1) = k+1 = f(L,m_2)$.

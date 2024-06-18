@@ -3,6 +3,16 @@
 Throughout this section, unless explicitly said otherwise $H$ will always denote a finite group. 
 
 \begin{definition}
+    Let $G$ be a group. A subgroup $K$ is said to be a maximal subgroup of $G$ if $K < G$ and there is no subgroup $M$ with $K < M < G$.
+\end{definition}
+
+For non-trivial finite groups, maximal subgroups always exist. Assuming otherwise, let $H$ be a non-trivial finite group without maximal subgroups. Then we can construct the sequence
+$1 < K_1 < K_2 ...$
+where each group $K$ is strictly contained in the one before. Since none of this groups by assumption can be a maximal subgroup of $H$ we can can prolong this sequence forever and thus arise at a contradiction on the finiteness of $H$.
+
+On the contrary maximal subgroups might not exist for infinite groups and an example is provided in \cite[p.~123]{RotmanITG}.
+
+\begin{definition}
     The \textbf{Frattini subgroup of $H$}, denoted by \textbf{$\Phi(H)$}, is the intersection of all maximal subgroups of $H$. 
 \end{definition}
 

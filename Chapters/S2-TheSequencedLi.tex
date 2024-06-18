@@ -1,8 +1,10 @@
-\section{The Sequence \texorpdfstring{$d(L_i)_{i \in \mathbb{N}}$}{dLiN}}
+\section{The Sequence \texorpdfstring{$d(L_k)_{k \in \mathbb{N}}$}{dLkN}}
 
-The sequence $d(L^i)_{i \in \mathbb{N}}$ is called the \textit{growth sequence} and has been studied in \cite{WiegoldGSFG, WiegoldGSFGII, WiegoldGSFGIII, WiegoldGSFGIV}. Given the importance that the groups $L_k$ assume in the study of the minimal number of generators of finite groups, in this section we will study some properties of the sequence $d(L_i)_{i \in \mathbb{N}}$. 
+Throughout we asume that $\mathbb{N}$ is the set of positive integers, i.e does not contain $0$.
+The sequence $d(L^k)_{k \in \mathbb{N}}$ is called the \textit{growth sequence} and has been studied in \cite{WiegoldGSFG, WiegoldGSFGII, WiegoldGSFGIII, WiegoldGSFGIV}. Given the importance that the groups $L_k$ assume in the study of the minimal number of generators of finite groups, in this section we will study some properties of the sequence $d(L_k)_{k \in \mathbb{N}}$. 
 
 \begin{theorem}
+    \label{S2:nondecLk}
     The sequence $d(L_k)_{k \in \mathbb{N}}$ is non-decreasing.
 \end{theorem}
 
@@ -22,7 +24,7 @@ The sequence $d(L^i)_{i \in \mathbb{N}}$ is called the \textit{growth sequence} 
 
 \begin{theorem}
     \label{S2:bounddLk}
-    $d(L_{k+1}) \le d(L_k) + 1$    
+    For all positive integers $k$, $d(L_{k+1}) \le d(L_k) + 1$.    
 \end{theorem}
 \begin{proof}
     Let $d(L_k) = d$, then there are $l_1, l_2, ... l_d \in L_k$ such that $\subgen{l_1, l_2, ... l_d} = L_k$. By abuse of notation, given $l \in L_k$ let $\ell \in L_{k+1}$ be the $k+1$-tuples whose first $k$ coordinates are the coordinates of $l$ and whose last two coordinates are equal, that is $\pi_k(\ell) = \pi_{k+1}(\ell)$. 
