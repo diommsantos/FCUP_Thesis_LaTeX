@@ -101,8 +101,26 @@
     By Theorem \ref{th:SocC}, $\soc H$ is complemented in $H$ say by $K$.
     Knowing also that $\soc H$ is the direct product of some minimal normal subgroups, say $\soc H = N_1 \times...\times N_q$, for $1 \le i \le q$, $N_i$ is complemented in $\soc H$ by $C_i = N_1 \times ... \times N_{i-1} \times 1 \times N_{i+1} \times ... \times N_q$.
     Consider the functions $\chi_i : \soc H \rightarrow N_i$ that send $n_ic_i$ to $n_i$ for any $n_i \in N_i$, $c_i \in C_i$.
-    It is routine to prove that for any $i$, $\chi_i$ is a surjective $K_i$-homomorphism with $\ker \chi_i = C_i$.
-    Obviously $\Psi_i = \phi_i^{-1} \circ \chi_i \colon \soc{H} \rightarrow N_1$ is a surjective $K_i$-homomorphism with $\ker \chi_i = C_i$ for any $i$.
+    It is routine to prove that for any $i$, $\chi_i$ is a surjective $H$-homomorphism with $\ker \chi_i = C_i$. Also $\phi_i$ is $H$-homomorphism. 
+    
+    We prove only the $H$-homomorphism claims.
+    For any $h \in H = N_iK_i$, $h$ can be written as $k_iv_i$ where $k_i \in K_i$ and $v_i \in N_i$. Thus for any $n_ic_i \in N_iC_i = \soc{H}$
+    \begin{align*}
+        \chi_i(hn_ic_ih^{-1}) &= \chi_i(k_iv_in_ic_iv_i^{-1}k_i^{-1}) \\
+        &= \chi_i(k_in_ic_ik_i^{-1}), \text{ since $\mathrm{soc}(H)$ is abelian and $v_i \in \mathrm{soc}(H)$} \\
+        &= \chi_i(k_in_ik_i^{-1}k_ic_ik_i^{-1}), \text{ let us notice that $k_ic_ik_i^{-1} \in C_i$ since $C_i$ is normal} \\
+        &= k_in_ik_i^{-1} = k_i(v_iv_i^{-1})n_ik_i^{-1} = k_iv_in_iv_i^{-1}k_i^{-1}\\
+        &= h\chi_i(n_ic_i)h^{-1}.
+    \end{align*}
+    Similarly for $\phi_i$:
+    \begin{align*}
+        \phi_i(hn_ih^{-1}) &= \phi_i(k_iv_in_iv_i^{-1}k_i^{-1})\\
+        &= \phi_i(k_in_ik_i^{-1}) \\
+        &= k_i\phi_i(n_i)k_i^{-1}, \text{since $\phi_i$ is a $K_i$-isomorphism} \\
+        &= k_i(v_iv_i^{-1})\phi_i(n_i)k_i^{-1} \\
+        &= k_iv_i\phi_i(n_i)v_i^{-1}k_i^{-1}= h\phi_i(n_i)h^{-1}.
+    \end{align*}
+    Obviously $\Psi_i = \phi_i^{-1} \circ \chi_i \colon \soc{H} \rightarrow N_1$ is a surjective $H$-homomorphism with $\ker \chi_i = C_i$ for any $i$.
 
     Setting $L=KN_1$ we can define the following function:
     \begin{align*}
