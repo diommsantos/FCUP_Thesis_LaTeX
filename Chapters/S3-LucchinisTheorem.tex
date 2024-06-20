@@ -30,14 +30,14 @@
 \begin{proof}
     By Theorem \ref{hommnsub} we have that $\inn N_1 = \alpha_1(N_1)$ is either a minimal normal subgroup of $L$ or $1$. 
     
-    Since $N_1$ is non abelian then there are $n_1, n_2 \in N_1$ such that $n_1n_2 \neq n_2n_1$. Therefore we have that $\alpha_1(n_1) = \gamma_{n_1} \neq 1$ as $1(n_2) = n_2 \neq n_1n_2n_1^{-1} = \gamma_{n_1}(n_2)$. Thus $\inn N_1$ is not $1$, and hence is a minimal normal subgroup of $L$.
+    Since $N_1$ is non abelian there are $n_1, n_2 \in N_1$ such that $n_1n_2 \neq n_2n_1$. Therefore we have that $\alpha_1(n_1) = \gamma_{n_1} \neq 1$ as $1(n_2) = n_2 \neq n_1n_2n_1^{-1} = \gamma_{n_1}(n_2)$. Thus $\inn N_1$ is not $1$, and hence is a minimal normal subgroup of $L$.
 
     To check that $\inn N_1$ is the unique minimal normal subgroup of $L$ we will verify that for every non-trivial normal subgroup $N$ of $L$, $\inn N_1 \subseteq N$. 
     
-    Let $N$ be a subgroup in the above conditions. Then $\alpha^{-1}(N)$ is normal in $H$. Furthermore since $N_1$ is a minimal normal subgroup, $\alpha^{-1}(N) \cap N_1$ is either $1$ or $N_1$. We will check that $\alpha^{-1}(N) \cap N_1$ must be $N_1$.
+    Let $N$ be a subgroup in the above conditions. Then $\alpha_1^{-1}(N)$ is normal in $H$. Furthermore since $N_1$ is a minimal normal subgroup, $\alpha_1^{-1}(N) \cap N_1$ is either $1$ or $N_1$. We will check that $\alpha_1^{-1}(N) \cap N_1$ must be $N_1$.
 
-    If $\alpha^{-1}(N) \cap N_1 = 1$ then $[\alpha^{-1}(N), N_1] \le \alpha^{-1}(N) \cap N_1 = 1$, that is the elements of $N_1$ commute with the elements of $\alpha^{-1}(N)$. Thus for all $h \in \alpha^{-1}(N)$, $\gamma_h(x) = hxh^{-1} = hh^{-1}x = x$. Therefore $N = \alpha_1(\alpha^{-1}(N)) = 1$. This is a contradiction, and so $\alpha^{-1}(N) \cap N_1 = N_1$.
-    Obviously it now follows from $N_1 \subseteq \alpha^{-1}(N)$ that $\alpha_1(N_1) \subseteq \alpha_1(\alpha_1^{-1}(N)) = N$ as we wanted to prove.
+    If $\alpha_1^{-1}(N) \cap N_1 = 1$ then $[\alpha_1^{-1}(N), N_1] \le \alpha_1^{-1}(N) \cap N_1 = 1$, that is the elements of $N_1$ commute with the elements of $\alpha_1^{-1}(N)$. Thus for all $h \in \alpha_1^{-1}(N)$, $\gamma_h(x) = hxh^{-1} = hh^{-1}x = x$. Therefore $N = \alpha_1(\alpha_1^{-1}(N)) = 1$. This is a contradiction, and so $\alpha_1^{-1}(N) \cap N_1 = N_1$.
+    Obviously it now follows from $N_1 \subseteq \alpha_1^{-1}(N)$ that $\alpha_1(N_1) \subseteq \alpha_1(\alpha_1^{-1}(N)) = N$ as we wanted to prove.
 \end{proof}
 
 \begin{theorem}
@@ -57,7 +57,7 @@
     Taking $L$ as $H$ gives the result for the subcase in which $M$ is non-abelian.
     If $M$ is abelian since $\Phi(H) = 1$, there exists a maximal subgroup $K$ of $H$ such that $K$ does not contain $M$. 
     Since $K$ is maximal and does not contain $M$, $KM = H$. 
-    Furthermore by the hypothesis on $K$, $K \cap M$ is a strictly contained normal subgroup of $M$ ($M$ is abelian). Obviously since $M$ is normal in $H$, $K \cap M$ is normal in $K$. We thus have $K \cap M$ is normal in $KM$ an thus in $H=KM$. We have obtained that $K \cap M$ is normal in $H$ and strictly contained in the minimal normal subgroup $M$, so we conclude that $K \cap M = 1$. It was thus proved that $K$ is the desired complement and we can take $L$ as $H$.   
+    Furthermore by the hypothesis on $K$, $K \cap M$ is a strictly contained normal subgroup of $M$ ($M$ is abelian). Obviously since $M$ is normal in $H$, $K \cap M$ is normal in $K$. We thus have $K \cap M$ is normal in $KM$ and thus in $H=KM$. We have obtained that $K \cap M$ is normal in $H$ and strictly contained in the minimal normal subgroup $M$, so we conclude that $K \cap M = 1$. It was thus proved that $K$ is the desired complement and we can take $L$ as $H$.   
 
     \vspace{\baselineskip}
     \noindent
@@ -70,7 +70,7 @@
 
     Consider the subgroup $K_r = \subgen{h_1x_1,...,h_mx_m}$. We assert that $N_1$ and $N_r$ both serve as complements for $K_r$ within $H$.
     
-    Clearly, $H = K_rN_1 = K_rN_r$; hence, we only need to demonstrate that $K_r \cap N_1 = K_r \cap N_r = 1$. We claim that the intersection $K_r \cap N_1$ is a normal subgroup of $K_rN_r = H$. In fact as $[N_1, N_r] \le N_1 \cap N_r = 1$, for any $k_r \in K_r$, $n_r \in N_r$:
+    Clearly, $H = K_rN_1 = K_rN_r$; hence, we only need to show that $K_r \cap N_1 = K_r \cap N_r = 1$. We claim that the intersection $K_r \cap N_1$ is a normal subgroup of $K_rN_r = H$. In fact as $[N_1, N_r] \le N_1 \cap N_r = 1$, for any $k_r \in K_r$, $n_r \in N_r$:
     $$ 
     k_rn_r(K_r \cap N_1)n_r^{-1}k_r^{-1} = k_rn_rn_r^{-1}(K_r \cap N_1)k_r^{-1} = K_r \cap N_1 
     $$
@@ -111,7 +111,7 @@
     \end{align*}
     where $k \in K$ and $s \in \soc H$. 
     
-    We show that $\Psi$ is in fact an isomorphism.
+    We will show that $\Psi$ is in fact an isomorphism.
 
     This function is well defined since if $k_1s_1 = k_2s_2$ then $k_2^{-1}k_1 = s_2s_1^{-1} \in C \cap \soc H = 1$ which implies $k_1 = k_2$ and $s_1 = s_2$. 
     Consequently for any $i$, $\Psi_i(s_1) = \Psi_i(s_2)$, therefore $$(k_1\Psi_1(s_1),k_1\Psi_2(s_1),...,k_1\Psi_q(s_1)) = (k_2\Psi_1(s_2),k_2\Psi_2(s_2),...,k_2\Psi_q(s_2)).$$
@@ -193,7 +193,7 @@ Now for $1 \le r \le q$ and $x \in N_1$
     \alpha_r(k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q))(x) &= \phi_r^{-1}(\phi_r(x)^{k\phi_1(m_1)\phi_2(m_2)...\phi_q(m_q)}) \\
     &= \phi_r^{-1}(\phi_r(x)^{k\phi_r(m_r)}) \\
     &= \phi_r^{-1}(\phi_r(x^k)^{\phi_r(m_r)}) \\
-    &= m_rkxk^{-1}m_r^{-1} = \gamma_{m_rk}(x)
+    &= m_rkxk^{-1}m_r^{-1} = \gamma_{m_r} \circ \gamma_{k}(x)
 \end{align*}
 where the second equality follows from the fact that $N_1,...,N_{r-1},N_{r+1}...,N_q$ centralize $N_r$ and the third from $\phi_r$ being a $K_r$-isomorphism. We thus conclude that
 $$
