@@ -174,17 +174,19 @@ $$
         \arrow["\phi"', from=2-2, to=2-1]
     \end{tikzcd}\]
 
-    If $N \in \mathscr{R}_\beta$ then there exists a surjective homomorphism $\gamma_N \colon F \rightarrow L$ such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$. Now $\pi_L \circ \gamma_{N/R} \circ \phi^{-1} = \bar{\beta} \circ \phi^{-1}$ and thus $\ker {\gamma_{N/R} \circ \phi^{-1}} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$. Since $\phi$ is an isomorphism $\ker{\gamma_{N/R} \circ \phi^{-1}} = \phi^{-1}(\ker \gamma_{N/R}) = \phi(N/R)$. We thus conclude that 
+    If $N \in \mathscr{R}_\beta$ then there exists a surjective homomorphism $\gamma_N \colon F \rightarrow L$ such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$. 
+    Now $\pi_L \circ \gamma_{N/R} \circ \phi^{-1} = \bar{\beta} \circ \phi^{-1}$ and thus $\ker {\gamma_{N/R} \circ \phi^{-1}} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$. 
+    Since $\phi$ is an isomorphism $\ker{\gamma_{N/R} \circ \phi^{-1}} = \phi(\ker \gamma_{N/R}) = \phi(N/R)$. We thus conclude that 
     $$\sigma(N) = \phi(N/R) = \ker{\gamma_{N/R} \circ \phi^{-1}} \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}.$$   
 
 
     If $K \in \mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$ then there exists a surjective homomorphism $\gamma_K \colon L_k \rightarrow L$ such that $\ker \gamma_K = K$ and $\pi_L \circ \gamma_K = \bar{\beta} \circ \phi^{-1}$. 
     Now $ \pi_L \circ \gamma_K \circ \phi \circ \pi = \bar{\beta} \circ \phi^{-1} \circ \phi \circ \pi = \bar{\beta} \circ \pi = \beta$ and thus $\ker{\gamma_K \circ \phi \circ \pi} \in \mathscr{R}_\beta$. Also $\ker{\gamma_K \circ \phi \circ \pi} = \pi^{-1}(\phi^{-1}(\ker \gamma_K)) = \pi^{-1}(\phi^{-1}(K))$.
-    We thus conclude that $\sigma^{-1}(K) = \pi^{-1}(\phi^{-1}(K)) = \ker{\gamma_K \circ \phi \circ \pi} \in \mathscr{R}_\beta$. 
-
+    We thus conclude that $\sigma^{-1}(K) = \pi^{-1}(\phi^{-1}(K)) = \ker{\gamma_K \circ \phi \circ \pi} \in \mathscr{R}_\beta$. It is thus proved that there is a bijection between $\mathscr{R}_\beta$ and $\mathscr{S}_{\bar{\beta} \circ \phi^{-1}}$.
+    
     Now by Theorems \ref{cardS} and \ref{PHallT} we obtain:
     $$
-    \frac{\phi_L(m)}{\card{\Gamma}\phi_{L/M}(m)} = \card{\mathscr{R}} = \card{\mathscr{S}} = 
+    \frac{\phi_L(m)}{\card{\Gamma}\phi_{L/M}(m)} = \card{\mathscr{R}_\beta} = \card{\mathscr{S}_{\bar{\beta} \circ \phi^{-1}}} = 
     \begin{cases}
         k & \text{if } M \text{ is not abelian,} \\
         (q^k-1)/(q-1) & \text{if } M \text{ is abelian.} \\
