@@ -17,7 +17,32 @@ Let $G \le H \le K$ be groups, if $G$ is complemented in $H$, its complement is 
 \end{theorem}
 
 \begin{proof}
+    \label{S1:SPE}
     Let $H'$ be the complement of $H$ in $K$ and $G'$ the complement of $G$ in $H$. Since by hypothesis $G'$ is normal in $K$ we have that $H'G'$ is a group. Also by hypothesis we have that:
     $K = H'H =H'(G'G) = (H'G')G$.
     Furthermore $H'G' \cap G = 1$ because if $g \in G \cap H'G'$ then $g = h'g'$ for some $h' \in H'$ and $g' \in G'$. We have that $gg'^{-1} = h' \in H' \cap GG' = H' \cap H = 1$ and so it follows that $h' = 1$ and that $g = g' \in G \cap G' = 1$.
+\end{proof}
+
+\begin{theorem}
+    Let $G$ be a group, $C_1, ..., C_n$ be a  finite sequence of subgroups of $G$ and $A \le G$ any subgroup. If $C_1...C_n \cap A = 1$
+    $$
+    \bigcap_{l = 1}^{n}(AC_l) = A(\bigcap_{l = 1}^{q}C_l).
+    $$
+\end{theorem}
+
+\begin{proof}
+    We will do this proof by induction on $n$.
+    Let $n = 2$. 
+    
+    We will start by proving $AC_1 \cap AC_2 \subseteq A(C_1 \cap C_2)$.
+    We have that $x \in AC_1 \cap AC_2 \iff a_1c_1 = x = a_2c_2$ for some $a_1, a_2 \in A$, $c_1 \in C_1$ and $c_2 \in C_2$. From this follows that $a_2^{-1}a_1 = c_2c_1^{-1} \in A \cap C_1C_2 = 1$. Thus we conclude that $a_1 = a_2$ and $c_1 = c_2 \in C_1 \cap C_2$, that is $x = ac_1 \in A(C_1 \cap C_2)$ and the first inclusion is thus proved. 
+
+    The other inclusion is trivial.
+
+    Let us assume now that the result holds for $n$. 
+    Then by the induction hypothesis,
+    $$
+    \bigcap_{i = 1}^{n}(AC_i) \cap AC_{n+1} = A(\bigcap_{i = 1}^{n}C_i) \cap AC_{n+1}.
+    $$
+    The rest of the proof is now analogous to the case $n = 2$ with $C_1 = \bigcap_{i = 1}^{n}C_i$ and $C_2 = C_{n+1}$.
 \end{proof}
