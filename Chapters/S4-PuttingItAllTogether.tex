@@ -27,9 +27,9 @@ $$
 \end{theorem}
 
 \begin{proof}
-    Let $x_1,..., x_n$ be the canonical basis of $F$. 
-    A surjective homomorphism $\beta : F \longrightarrow L/M$ is uniquely determined by $\beta(x_1) = l_1M, ..., \beta(x_m) = x_mM$, where $L = \subgen{l_1,...,l_m, M}$. 
-    Now let $\gamma : F \longrightarrow L$ be a surjective homomorphism which composed with the the projection $\pi_L \colon L \longrightarrow L/M$ yields $\beta$; we must have $\gamma(x_1) = l_1z_1,...,\gamma(x_m)=l_mz_m$ with $z_1,..., z_m \in M$ and $L = \subgen{l_1z_1,...,l_mz_m}$. By Theorem \ref{GaschutzT} the number of possible choices for $(z_1,...,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$. Now let $\gamma_1, \gamma_2$ be two of these homomorphisms; we claim that $\ker \gamma_1 = \ker \gamma_2 = N$ if and only if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$. 
+    Let $x_1,\ldots , x_n$ be the canonical basis of $F$. 
+    A surjective homomorphism $\beta : F \longrightarrow L/M$ is uniquely determined by $\beta(x_1) = l_1M, \ldots , \beta(x_m) = x_mM$, where $L = \subgen{l_1,\ldots ,l_m, M}$. 
+    Now let $\gamma : F \longrightarrow L$ be a surjective homomorphism which composed with the the projection $\pi_L \colon L \longrightarrow L/M$ yields $\beta$; we must have $\gamma(x_1) = l_1z_1,\ldots ,\gamma(x_m)=l_mz_m$ with $z_1,\ldots , z_m \in M$ and $L = \subgen{l_1z_1,\ldots ,l_mz_m}$. By Theorem \ref{GaschutzT} the number of possible choices for $(z_1,\ldots ,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$. Now let $\gamma_1, \gamma_2$ be two of these homomorphisms; we claim that $\ker \gamma_1 = \ker \gamma_2 = N$ if and only if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$. 
     
     If $\ker \gamma_1 = \ker \gamma_2 = N$, then by the First isomorphism Theorem there exits isomorphisms $\bar{\gamma_1} \colon F/N \rightarrow L$ and $\bar{\gamma_2} \colon F/N \rightarrow L$ such that for all $x \in F$, $\bar{\gamma_1}(xN) = \gamma_1(x)$ and $\bar{\gamma_2}(xN) = \gamma_2(x)$. Now let us consider the isomorphism $\alpha = \bar{\gamma_2} \circ \bar{\gamma_1}^{-1} \colon L \rightarrow L.$ For all $x \in F$, we have that
     \begin{align*}
@@ -54,23 +54,23 @@ $$
 \end{theorem}
 
 \begin{proof}
-    By Theorem \ref{PHallT}, $\mathscr{R}_\beta$ is finite so we can assume that $\mathscr{R}_\beta = \left\{ N_1,...,N_r \right\}$.
+    By Theorem \ref{PHallT}, $\mathscr{R}_\beta$ is finite so we can assume that $\mathscr{R}_\beta = \left\{ N_1,\ldots ,N_r \right\}$.
 
-    Now given $N \in \mathscr{R}_\beta$, let $\gamma_N \colon F \rightarrow L$ be such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$. Let us also consider the subsequence of $N_1, ..., N_r$:
-    $$N_{i_1} = N_1, ..., N_{i_q}$$
+    Now given $N \in \mathscr{R}_\beta$, let $\gamma_N \colon F \rightarrow L$ be such that $\ker \gamma_N = N$ and $\pi_L \circ \gamma_N = \beta$. Let us also consider the subsequence of $N_1, \ldots , N_r$:
+    $$N_{i_1} = N_1, \ldots , N_{i_q}$$
     where $\bigcap_{n=1}^{j}N_{i_n} \nsubseteq N_{i_{j+1}}$ for $1 \le j \le q-1$. Assuming we have $N_{i_j}$ we choose $N_{i_{j+1}}$ in the following way: $i_{j+1}$ is the smallest number such that $i_{j+1} > i_j$ and $\bigcap_{n=1}^{j}N_{i_n} \nsubseteq N_{i_{j+1}}$; if no such number exists the subsequence is completed.Let us note that $\bigcap_{n = 1}^{q}N_{i_n} = \bigcap_{N \in \mathscr{R}_\beta}N$.
-    Through reindexing we can assume that the sequence just constructed is simply $N_1,...,N_q$.
+    Through reindexing we can assume that the sequence just constructed is simply $N_1,\ldots ,N_q$.
     
     We will prove by induction that for $1 \le s \le q$ the function
     \begin{align*}
         \Psi_s \colon &F \rightarrow L_s \\
-                    &x \mapsto (\gamma_{N_1}(x), ... , \gamma_{N_s}(x))
+                    &x \mapsto (\gamma_{N_1}(x), \ldots  , \gamma_{N_s}(x))
     \end{align*}
     is a surjective homomorphism with kernel $\bigcap_{i=1}^s N_i$. After this is proved we can easily conclude that $F/(\bigcap_{N \in \mathscr{R}_\beta}N) \cong L_q$ due to $\bigcap_{N \in \mathscr{R}_\beta}N = \bigcap_{i=1}^q N_i$ and the First isomorphism Theorem.
     
     For $s = 1$, $\Psi_s = \gamma_{N_1}$ and thus the hypothesis obviously holds. Let us assume now that it holds for $1 \le s < q$.
 
-    That $\Psi_{s+1}$ maps to $L_{s+1}$ is not obvious. For any $1 \le i,j \le q$ we have $\gamma_{N_i}(x)M = \beta(x) = \gamma_{N_j}(x)M$ by the definition of the $\gamma$ functions. Thus $\gamma_{N_1}(x)M = ... = \gamma_{N_{s+1}}(x)M$ and $\Psi_{s+1}$ maps to $L_{s+1}$.
+    That $\Psi_{s+1}$ maps to $L_{s+1}$ is not obvious. For any $1 \le i,j \le q$ we have $\gamma_{N_i}(x)M = \beta(x) = \gamma_{N_j}(x)M$ by the definition of the $\gamma$ functions. Thus $\gamma_{N_1}(x)M = \ldots  = \gamma_{N_{s+1}}(x)M$ and $\Psi_{s+1}$ maps to $L_{s+1}$.
 
     This function is obviously well defined. 
     We also easily obtain that $\ker \Psi_{s+1} = \bigcap_{i=1}^{s+1} N_i =\bigcap_{N \in \mathscr{R}_\beta}N$ since for any $1 \le i \le q$, $\ker \gamma_{N_i} = N_i$.
@@ -83,16 +83,16 @@ $$
     
     Let us also notice that for all $x \in F$, $\Psi_{s+1}(x) = (\Psi_{s}(x), \gamma_{N_{s+1}}(x))$.
 
-    Thus given $(lm_1, ..., lm_{s+1}) \in L_{s+1}$ by the induction hypothesis there is some $x \in F$ such that $\Psi_{s}(x) = (lm_1, ..., lm_s)$.
+    Thus given $(lm_1, \ldots , lm_{s+1}) \in L_{s+1}$ by the induction hypothesis there is some $x \in F$ such that $\Psi_{s}(x) = (lm_1, \ldots , lm_s)$.
     Since $lM = \gamma_{N_1}(x)M = \gamma_{s+1}(x)M$, $\gamma_{s+1}(x) = lm_x$ for some $m_x \in M$. 
     Consider now the element $xy \in F$ where $y \in \bigcap_{i=1}^s N_i$ and $\gamma_{s+1}(y) = m_x^{-1}m_{s+1}$ (such $y$ exists due to $M \subseteq \gamma_{N_{s+1}}(\bigcap_{i=1}^s N_i)$).
     Then 
     \begin{align*}
         \Psi_{s+1}(xy) &=  (\Psi_{s}(xy), \gamma_{N_{s+1}}(xy)) \\ 
-        &= (\gamma_{N_1}(xy), ..., \gamma_{N_{s+1}}(xy)) \\
-        &= (\gamma_{N_1}(x)\gamma_{N_1}(y), ..., \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
-        &= (\gamma_{N_1}(x), ...,\gamma_{N_s}(x), \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
-        &= (lm_1, ...,lm_s, lm_xm_x^{-1}m_{s+1}) = (lm_1, ..., lm_{s+1}) 
+        &= (\gamma_{N_1}(xy), \ldots , \gamma_{N_{s+1}}(xy)) \\
+        &= (\gamma_{N_1}(x)\gamma_{N_1}(y), \ldots , \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
+        &= (\gamma_{N_1}(x), \ldots ,\gamma_{N_s}(x), \gamma_{N_{s+1}}(x)\gamma_{N_{s+1}}(y)) \\
+        &= (lm_1, \ldots ,lm_s, lm_xm_x^{-1}m_{s+1}) = (lm_1, \ldots , lm_{s+1}) 
     \end{align*}
     where the fourth equality follows from $y \in \bigcap_{i=1}^s N_i = \bigcap_{i = 1}^s \ker \gamma_{N_i}$. Surjectivity and the first part of the theorem is thus proved. It is now only necessary to prove that there is no quotient of $F$ isomorphic to some $L_k$ for some $k > q$.
 
@@ -108,7 +108,7 @@ $$
                                                & L \arrow[ru, "\pi_L"']                        &     &  & L \arrow[ru, "\pi_L"]                        &    
     \end{tikzcd}.
     $$
-    Now obviously $\Psi(x) = (\gamma_1(x), ..., \gamma_k(x))$ and thus
+    Now obviously $\Psi(x) = (\gamma_1(x), \ldots , \gamma_k(x))$ and thus
     $$K = \ker \Psi = \bigcap_{i=1}^{q} \ker \gamma_i.$$
     Furthermore for all $1 \le i \le k$ and all $x \in F$,
     \begin{align*}

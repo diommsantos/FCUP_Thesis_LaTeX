@@ -11,9 +11,9 @@
     If $M$ is not abelian, by Theorem \ref{nabmnsub}, $N = \Mi$ for some $1 \le i \le k+1$. It is trivial to verify that
     \begin{align*}
         \psi \colon &L_{k+1} \longrightarrow L_k \\
-                (l_1,.&..,l_{k+1}) \mapsto (l_1,...,l_{i-1},l_{i+1},...,l_{k+1})
+                (l_1,.&..,l_{k+1}) \mapsto (l_1,\ldots ,l_{i-1},l_{i+1},\ldots ,l_{k+1})
     \end{align*}
-    is a surjective homomorphism. We will now verify that $\ker \psi = \Mi = N$. Obviously $\Mi \subseteq \ker \psi$ as the $i$-th coordinate is "forgotten" and that is the only non $1$ coordinate in $\Mi$. For the other inclusion, we first have by Theorem \ref{qtLksoc} that $\card{L_k} = \card{L/M} \card{M}^k$. By the First Isomorphism Theorem, $\card{L_{k+1}}/\card{\ker{\psi}} = \card{L_k}$. From this two equalities follows that $\card{\ker \psi} = \card{\Mi} = \card \Mi$. Therefore $\ker \psi = \Mi = N$ and consequently
+    is a surjective homomorphism. We will now verify that $\ker \psi = \Mi = N$. Obviously $\Mi \subseteq \ker \psi$ as the $i$-th coordinate is "forgotten" and that is the only non $1$ coordinate in $\Mi$. For the other inclusion, we first have by Theorem \ref{qtLksoc} that $\card{L_k} = \card{L/M} \card{M}^k$. By the First Isomorphism Theorem, $\card{L_{k+1}}/\card{\ker{\psi}} = \card{L_k}$. From this two equalities follows that $\card{\ker \psi} = \card{\Mi} = \card N$. Therefore $\ker \psi = \Mi = N$ and consequently
     $L_{k+1}/N = L_{k+1}/\ker \psi \cong L_k$ by the First Isomorphism Theorem.
 
     If $M$ is abelian, by hypothesis we have that $M$ is complemented in $L$ say by $C_L$. By Theorem \ref{S2:complMkab}, $\diag{C_L^q}$ is a complement of $M^q$ in $L_q$.
@@ -32,7 +32,7 @@
         \psi \colon C & \rightarrow L_k=\diag{C_L^k}M^k \\
                     \dl s &\mapsto \dl \phi(s)
     \end{align*}
-    where $l \in C_L^{k+1}$ and $s \in C_{\soc{L_{k+1}}}$ and $\phi$ is the isomorphism from Theorem \ref{cplNsoc}.
+    where $l \in C_L$ and $s \in C_{\soc{L_{k+1}}}$ and $\phi$ is the isomorphism from Theorem \ref{cplNsoc}.
 
     Let $l_1, l_2 \in C_L$ and $s_1, s_2 \in C_{\soc{L_{k+1}}}$.
     To see that $\psi$ is well defined it suffices to notice that if $\dl_1s_1 = \dl_2s_2$ then:
@@ -77,5 +77,8 @@
     We have that $L_{k+1}/U \cong L_{k}$ by some isomorphism $f$.
     By induction either $\soc{L_{k}} \le f(N/U)$ or $f(N/U) \le \soc{L_k}$. Since $N$ is not a subgroup of $\soc{L_{k+1}}$ we have that $N/U \nleqslant \soc{L_{k+1}}/U$ which implies that $\soc{L_k} = f(\soc{L_{k+1}/U}) \le f(N/U)$ and thus the first case holds.
     
-    Applying $f^{-1}$ to $\soc {L_k} \le f(N/U)$ we get $\soc{L_{k+1}}/U \subseteq \soc{L_{k+1}/U} \le N/U$. Hence as $U \subseteq \soc{L_{k+1}}, N$ we obtain $\soc{L_{k+1}} = \pi^{-1}(\soc{L_{k+1}/U}) \le \pi^{-1}(N/U) = N$, where $\pi: L_k \rightarrow L_k/U$ is the usual projection.
+    Now considering the natural projection $\pi \colon L_{k+1} \longrightarrow L_{k+1}/U$  we obtain, by Theorem \ref{hommnsub}, that $\soc{L_{k+1}}/N = \pi(\soc{L_{k+1}}) \subseteq \soc{L_{k+1} / N}$.
+    
+    
+    Applying $f^{-1}$ to $\soc {L_k} \le f(N/U)$ we get $\soc{L_{k+1}}/U \subseteq \soc{L_{k+1}/U} \le N/U$. Hence as $U \subseteq \soc{L_{k+1}}, N$ we obtain $\soc{L_{k+1}} = \pi^{-1}(\soc{L_{k+1}/U}) \le \pi^{-1}(N/U) = N$.
 \end{proof}

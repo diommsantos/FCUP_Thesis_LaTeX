@@ -11,13 +11,13 @@ The sequence $d(L^k)_{k \in \mathbb{N}}$ is called the \textit{growth sequence} 
 \begin{proof}
     Let us assume to obtain a contradiction that there is some positive integer $k$ such that $d(L_{k+1}) < d(L_k)$. 
     
-    Let us consider the function $\rho: L_{k+1} \rightarrow L_k$ that drops the last coordinate. That is given $(x_1,...,x_{k+1}) \in L_{k+1}$, $\rho((x_1,...,x_{k+1})) = (x_1,...,x_k)$.
+    Let us consider the function $\rho: L_{k+1} \rightarrow L_k$ that drops the last coordinate. That is given $(x_1,\ldots ,x_{k+1}) \in L_{k+1}$, $\rho((x_1,\ldots ,x_{k+1})) = (x_1,\ldots ,x_k)$.
 
-    Now let $l_1,...,l_m$ be a minimal generating set of $L_{k+1}$, that is $
-    \subgen{l_1,...,l_m} = L_{k+1}$ and $d(L_{k+1}) = m$.
+    Now let $l_1,\ldots ,l_m$ be a minimal generating set of $L_{k+1}$, that is $
+    \subgen{l_1,\ldots ,l_m} = L_{k+1}$ and $d(L_{k+1}) = m$.
     Obviously $\rho$ is surjective and thus we obtain that 
     $$
-    L_k = \rho(L_{k+1}) = \rho(\subgen{l_1,...,l_m}) = \subgen{\rho(l_1),...,\rho(l_m)}.
+    L_k = \rho(L_{k+1}) = \rho(\subgen{l_1,\ldots ,l_m}) = \subgen{\rho(l_1),\ldots ,\rho(l_m)}.
     $$
     This is of course a contradiction since we assumed that $m = d(L_{k+1}) < d(L_k)$.
 \end{proof}
@@ -27,23 +27,23 @@ The sequence $d(L^k)_{k \in \mathbb{N}}$ is called the \textit{growth sequence} 
     For all positive integers $k$, $d(L_{k+1}) \le d(L_k) + 1$.    
 \end{theorem}
 \begin{proof}
-    Let $d(L_k) = d$, then there are $l_1, l_2, ... l_d \in L_k$ such that $\subgen{l_1, l_2, ... l_d} = L_k$. By abuse of notation, given $l \in L_k$ let $\ell \in L_{k+1}$ be the $k+1$-tuples whose first $k$ coordinates are the coordinates of $l$ and whose last two coordinates are equal, that is $\pi_k(\ell) = \pi_{k+1}(\ell)$. 
+    Let $d(L_k) = d$, then there are $l_1, l_2, \ldots  l_d \in L_k$ such that $\subgen{l_1, l_2, \ldots  l_d} = L_k$. By abuse of notation, given $l \in L_k$ let $\ell \in L_{k+1}$ be the $k+1$-tuples whose first $k$ coordinates are the coordinates of $l$ and whose last two coordinates are equal, that is $\pi_k(\ell) = \pi_{k+1}(\ell)$. 
         
-    Let $m \in 1 \times ... \times 1 \times M \le L_{k+1}$ and consider
+    Let $m \in 1 \times \ldots  \times 1 \times M \le L_{k+1}$ and consider
     $$H = \subgen{m^\ell | l \in L_k} \le L_{k+1}.$$
-    For all $i \in \left\{1, ..., k \right\}$, $\pi_i(H) = 1$, because
+    For all $i \in \left\{1, \ldots , k \right\}$, $\pi_i(H) = 1$, because
     $$\pi_i(\subgen{m^\ell | l \in L_k}) = \subgen{\pi_i(m)^{\pi_i(\ell)} | l \in L_k} = \subgen{1^{\pi_i(\ell)} | l \in L_k} = 1.$$ 
     And $\pi_{k+1}(H) = M$ since
     $$\pi_{k+1}(\subgen{m^\ell | l \in L_k}) = \subgen{\pi_{k+1}(m)^{\pi_{k+1}(\ell)} | l \in L_k} = \subgen{\pi_{k+1}(m)}_L,$$
-    where the last inequality follows since $\pi_{k+1}(l_1) = l_1, \pi_{k+1}(l_2) = l_2, ..., \pi_{k+1}(l_d) = l_d$ and $\subgen{l_1, l_2, ... l_d} = L_k$. We thus have that $\pi_{k+1}(H)$ is a nontrivial normal subgroup of $L$ that is contained in $M$, thus $\pi_{k+1}(H) = M$ due to the minimality of $M$. We thus have that $H = 1 \times ... \times 1 \times M$.
-    Now $L_{k+1} = \left\{ \ell | l \in L_{k+1} \right\}(1 \times ... \times 1 \times M) = \left\{ \ell | l \in L_{k+1} \right\} H = \subgen{\ell_1, \ell_2, ... , \ell_d, m}$
+    where the last inequality follows since $\pi_{k+1}(l_1) = l_1, \pi_{k+1}(l_2) = l_2, \ldots , \pi_{k+1}(l_d) = l_d$ and $\subgen{l_1, l_2, \ldots  l_d} = L_k$. We thus have that $\pi_{k+1}(H)$ is a nontrivial normal subgroup of $L$ that is contained in $M$, thus $\pi_{k+1}(H) = M$ due to the minimality of $M$. We thus have that $H = 1 \times \ldots  \times 1 \times M$.
+    Now $L_{k+1} = \left\{ \ell | l \in L_{k+1} \right\}(1 \times \ldots  \times 1 \times M) = \left\{ \ell | l \in L_{k+1} \right\} H = \subgen{\ell_1, \ell_2, \ldots  , \ell_d, m}$
     and the result is proved.
     
 \end{proof}
 
 \begin{theorem}
     \label{S2:undLk}
-    The sequence $d(L_1),...,d(L_k), ....$ is unlimited.
+    The sequence $d(L_1),\ldots ,d(L_k), \ldots .$ is unlimited.
 \end{theorem}
 
 \begin{proof}
@@ -51,14 +51,14 @@ The sequence $d(L^k)_{k \in \mathbb{N}}$ is called the \textit{growth sequence} 
     Let $F$ be a free group of rank $m$ and $K$ be the set of positive integers $k$ such that there exists a surjective homomorphism from $F$ to $L_k$. 
     It will be proved that $K$ is a finite set, a contradiction from which the result will follow.
 
-    Let $k > 1 \in K$, then there exists a surjective homomorphism $\Psi : F \rightarrow L_k$. For $1 \le i \le k$, let $\gamma_i = \pi_i \circ \Psi : F \rightarrow L_k \rightarrow L$ and let $\pi : L \rightarrow L/M$ be the natural projection. For all $x \in F$, $\Psi(x) = (l_1,...,l_k)$ for some $(l_1,...,l_k) \in L_k$ thus:
+    Let $k > 1 \in K$, then there exists a surjective homomorphism $\Psi : F \rightarrow L_k$. For $1 \le i \le k$, let $\gamma_i = \pi_i \circ \Psi : F \rightarrow L_k \rightarrow L$ and let $\pi : L \rightarrow L/M$ be the natural projection. For all $x \in F$, $\Psi(x) = (l_1,\ldots ,l_k)$ for some $(l_1,\ldots ,l_k) \in L_k$ thus:
     \begin{align*}
-        &Ml_1 = Ml_2 = ... = Ml_k \text{ and } \\
-        &\pi\gamma_1(x) = Ml_1, .... , \pi\gamma_k(x) = Ml_k \\
-        \implies &\pi\gamma_1 = \pi\gamma_2 = ... = \pi\gamma_k.
+        &Ml_1 = Ml_2 = \ldots  = Ml_k \text{ and } \\
+        &\pi\gamma_1(x) = Ml_1, \ldots . , \pi\gamma_k(x) = Ml_k \\
+        \implies &\pi\gamma_1 = \pi\gamma_2 = \ldots  = \pi\gamma_k.
     \end{align*}
-    Let $i_1, i_2 \in \left\{ 1, ..., k \right\}$ and let $(m_1,..., m_k) \in M_k \le L_k$ with $m_{i_1} = 1, m_{i_2} \ne 1.$ Since $\Psi : F \rightarrow L_k$ is surjective there exists an $x \in F$ such that $\Psi(x) = (m_1,..., m_k)$. 
-    We then have that $\gamma_{i_1}(x) = m_{i_1} = 1$ and $\gamma_{i_2}(x) = m_{i2} \ne 1$, and thus $x \in \ker \gamma_{i_1}$ and $x \notin \ker \gamma_{i_2}$ and hence $\ker \gamma_{i_1} \ne \ker \gamma_{i_2}$. We thus have that $\card{\left\{ \ker \gamma_{1}, ..., \ker \gamma_{k} \right\}} = k$. 
+    Let $i_1, i_2 \in \left\{ 1, \ldots , k \right\}$ and let $(m_1,\ldots , m_k) \in M_k \le L_k$ with $m_{i_1} = 1, m_{i_2} \ne 1.$ Since $\Psi : F \rightarrow L_k$ is surjective there exists an $x \in F$ such that $\Psi(x) = (m_1,\ldots , m_k)$. 
+    We then have that $\gamma_{i_1}(x) = m_{i_1} = 1$ and $\gamma_{i_2}(x) = m_{i2} \ne 1$, and thus $x \in \ker \gamma_{i_1}$ and $x \notin \ker \gamma_{i_2}$ and hence $\ker \gamma_{i_1} \ne \ker \gamma_{i_2}$. We thus have that $\card{\left\{ \ker \gamma_{1}, \ldots , \ker \gamma_{k} \right\}} = k$. 
     
-    By Theorem \ref{PHallT}, taking $\beta$ as $\pi\gamma_i$ for any $i$ (it was proved that this functions were all equal) and seeing $\left\{ \ker \gamma_{1}, ..., \ker \gamma_{k} \right\}$ as a subset of the appropriate $R$, the set of normal subgroups $N$ of $F$ arising as kernels of those homomorphisms of $F$ onto $L$ which composed with $\pi$ yield the given $\beta$, we get that $k \le \phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$ and thus $\card{K} \le \phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$.
+    By Theorem \ref{PHallT} below, taking $\beta$ as $\pi\gamma_i$ for any $i$ (it was proved that these functions were all equal) and seeing $\left\{ \ker \gamma_{1}, \ldots , \ker \gamma_{k} \right\}$ as a subset of the appropriate $R$, the set of normal subgroups $N$ of $F$ arising as kernels of those homomorphisms of $F$ onto $L$ which composed with $\pi$ yield the given $\beta$, we get that $k \le \phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$ and thus $\card{K} \le \phi_L(m)/\card{\Gamma}\phi_{L/M}(m)$. In particular $K$ is finite.
 \end{proof}

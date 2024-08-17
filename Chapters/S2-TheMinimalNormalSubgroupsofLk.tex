@@ -9,9 +9,9 @@
     Let $N$ be a minimal normal subgroup of $L_k$.
     Once again by Theorem \ref{hommnsub}, for each $1 \le i \le k$, $\pi_i(N)$ is either $1$ or $M$. We also have that $\pi_j(N) = M$ for some $j$ otherwise $N$ would be the trivial subgroup which is a contradiction.
 
-    Let $j$ be such that $\pi_j(N) = M$. Now we will prove that for any $1 \le i \le k$ different of $j$, $\pi_i(N) = 1$ which gives us the result.
+    Let $j$ be such that $\pi_j(N) = M$. Now we will prove that for any $1 \le i \le k$ different from $j$, $\pi_i(N) = 1$ which gives us the result.
     
-    Suppose on the contrary that exists some $1 \le i \le k$ different of $j$ such that $\pi_i(N) = M$.
+    Suppose on the contrary that exists some $1 \le i \le k$ different from $j$ such that $\pi_i(N) = M$.
     By Theorem \ref{mnsubsc} we obtain $[N, \Mi] = 1$. Since $M$ is not abelian we can choose elements $m_1, m_2 \in M$ such that $m_1m_2 \ne m_2m_1$. Besides we have by hypothesis that $m_1 = \pi_i(n_1)$ and $m_2 = \pi_i(n_2)$ for some $n_1 \in N$ and some  $n_2 \in M_i$. It thus follows that:
     \begin{align*}
        m_1m_2 &= \pi_i(n_1)\pi_i(n_2) \\
@@ -23,7 +23,7 @@
 \end{proof}
 
 With the previous theorem, the minimal normal subgroups in the case where $M$ is non abelian are fully characterized.
-What can we say about the minimal normal subgroups of $L_k$ in the abelian case? The next theorems provide us some nice properties.
+What can we say about the minimal normal subgroups of $L_k$ in general? The next theorems provide us some nice properties.
 
 \begin{theorem}
     \label{abmnsub}
@@ -54,7 +54,7 @@ The previous definition depends on which power of the group $L$ we are consideri
 \begin{proof}
     We have once more that $\pi_i(N) = M$ for some $1 \le i \le k$. 
     
-    Let $C = \Mi[1]...\Mi[i-1]\Mi[i+1]...\Mi[k]$. We claim that $N \cap C = 1$. Let us note first that any element of $N \cap C \subseteq C$ has $i$-th coordinate $1$. Thus $N \cap C \nsub L_k$ is strictly contained in the minimal normal subgroup $N$. So it must be $1$.
+    Let $C = \Mi[1]\ldots \Mi[i-1]\Mi[i+1]\ldots \Mi[k]$. We claim that $N \cap C = 1$. Let us note first that any element of $N \cap C \subseteq C$ has $i$-th coordinate $1$. Thus $N \cap C \nsub L_k$ is strictly contained in the minimal normal subgroup $N$. So it must be $1$.
 
     From the Second Isomorphism Theorem we get that $\card{NC}/\card{N} = \card{C} / \card{N \cap C}$.
     We obtain $\card{NC} = \card{N}\card{C}\cdot 1$ and since $\card{N} = \card{M}$ by Theorem \ref{abmnsub}, $\card{NC} = \card{M}\card{C} = \card{M}^k = \card{\soc{L_k}}$.
@@ -63,16 +63,16 @@ The previous definition depends on which power of the group $L$ we are consideri
 
     The expected isomorphism
     \begin{align*}
-        \phi \colon C = M \times ... \times M \times &1 \times M \times ... \times M \longrightarrow M^{k-1} \\
-        (m_1,...,m_i,&1,m_{i+1},...,m_{k}) \mapsto (m_1,...,m_i,m_{i+1},...,m_{k})
+        \phi \colon C = M \times \ldots  \times M \times &1 \times M \times \ldots  \times M \longrightarrow M^{k-1} \\
+        (m_1,\ldots ,m_i,&1,m_{i+1},\ldots ,m_{k}) \mapsto (m_1,\ldots ,m_i,m_{i+1},\ldots ,m_{k})
     \end{align*}
     works. 
     
-    The property is easily verified since for any $l \in L$, $(m_1,...,m_i,1,m_{i+1},...,m_{k}) \in C$:
+    The property is easily verified since for any $l \in L$, $(m_1,\ldots ,m_i,1,m_{i+1},\ldots ,m_{k}) \in C$:
     \begin{align*}
-        &\phi(lm_1l^{-1},...,lm_il^{-1},l1l^{-1},lm_{i+1}l^{-1},...,lm_{k}l^{-1}) &= \\
-        &(lm_1l^{-1},...,lm_il^{-1},lm_{i+1}l^{-1},...,lm_{k}l^{-1}) &= \\
-        &(l,...,l)(m_1,...,m_i,m_{i+1},...,m_{k})(l^{-1},...,l^{-1}) &= \\ 
-        &(l,...,l)\phi(m_1,...,m_i,1,m_{i+1},...,m_{k})(l,...,l)^{-1}
+        &\phi(lm_1l^{-1},\ldots ,lm_il^{-1},l1l^{-1},lm_{i+1}l^{-1},\ldots ,lm_{k}l^{-1}) &= \\
+        &(lm_1l^{-1},\ldots ,lm_il^{-1},lm_{i+1}l^{-1},\ldots ,lm_{k}l^{-1}) &= \\
+        &(l,\ldots ,l)(m_1,\ldots ,m_i,m_{i+1},\ldots ,m_{k})(l^{-1},\ldots ,l^{-1}) &= \\ 
+        &(l,\ldots ,l)\phi(m_1,\ldots ,m_i,1,m_{i+1},\ldots ,m_{k})(l,\ldots ,l)^{-1}
     \end{align*}
 \end{proof}
