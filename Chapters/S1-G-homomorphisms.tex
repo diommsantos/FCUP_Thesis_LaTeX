@@ -11,7 +11,26 @@ As a reminder we enunciate here the definition of a $G$-set.
     \end{enumerate}
     One also says that \textbf{$G$ acts on $X$}. If $|X| = n$, then $n$ is called the \textbf{degree} of the $G$-set $X$.
 \end{definition}
-    
+
+\begin{definition}
+    Let $G$ be a group and $X$ a subgroup of $G$. The centralizer of $X$ is the subgroup
+    $$
+    C_G(X) = \left\{ g \in G | \forall x \in X, xg = gx \right\}.
+    $$
+\end{definition}
+
+We claim that if $X \nsub G$ then $C_G(X) \nsub G$. For all $g \in G$, $c \in C_G(x)$ and $x \in X$,
+$$
+gcg^{-1}x = gc(g^{-1}xg)g^{-1} = g(g^{-1}xg)cg^{-1} = xgcg^{-1} 
+$$
+where the third equality follows from $g^{-1}xg \in g^{-1}Xg = X$ and the fact that $c \in C_G(x)$.
+
+\begin{definition}
+    Let $G$ be a group and $X$ a subgroup of $G$. The normalizer of $X$ is the subgroup
+    $$
+    N_G(X) = \left\{ g \in G | gXg = X \right\}.
+    $$
+\end{definition}
 
 A more profound exposition of $G$-homomorphisms is available on \cite[p.~260]{RotmanITG}, but for our purposes just the definition suffices.
 
