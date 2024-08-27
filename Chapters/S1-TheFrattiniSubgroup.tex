@@ -13,12 +13,12 @@ where each group $K$ is strictly contained in the one before. Since none of this
 On the contrary maximal subgroups might not exist for infinite groups and an example is provided in \cite[p.~123]{RotmanITG}.
 
 \begin{definition}
-    The \textbf{Frattini subgroup of $H$}, denoted by \textbf{$\Phi(H)$}, is the intersection of all maximal subgroups of $H$. 
+    The \textbf{Frattini subgroup of $H$}, denoted by \textbf{$\Phi(H)$}, is the intersection of all maximal subgroups of $H$ if $H$ has a maximal subgroup, otherwise $\Phi(H)$ is set to be $H$. 
 \end{definition}
 
 \begin{theorem}
     \cite[p.~123]{RotmanITG}
-    The Frattini subgroup of $H$ is the set of all nongenerators, that is the set of those elements $h \in H$ such that if $H = \subgen{Y, h}$ then $H = \subgen{Y}$ for any set $Y \subseteq H$.
+    The Frattini subgroup of a nontrivial finite group $H$ is the set of all nongenerators, that is the set of those elements $h \in H$ such that if $H = \subgen{Y, h}$ then $H = \subgen{Y}$ for any set $Y \subseteq H$.
 \end{theorem}
 
 \begin{proof}
@@ -47,8 +47,8 @@ On the contrary maximal subgroups might not exist for infinite groups and an exa
         To show the reverse inclusion, consider the quotient group $H/H'H^p$.
         It is an abelian group of exponent $p$, hence isomorphic to $(\mathbb{Z}_p)^q$ for some positive integer $q$ and thus can be regarded as a vector space over the field $\mathbb{F}_p$.
         It is evident that its Frattini subgroup is trivial.
-        Now, if we have $N \nsub H$ such that $N \le \Phi(H)$, it can be verified easily that $\Phi(H)$ is the preimage (under the natural quotient map $\pi$) of $\Phi(H/N)$, as maximal subgroups correspond.
-        Thus $\Phi(H) = \pi^{-1}(\Phi(H/(H'H^p))) = \pi^{-1}(1) \subseteq H'H^p$ and we conclude that $\Phi(H) = H'H^p$.
+        Now, if we have $N \nsub H$ such that $N \le \Phi(H)$, it can be verified easily that $\Phi(H)$ is in the preimage (under the natural quotient map $\pi$) of $\Phi(H/N)$, as maximal subgroups correspond.
+        Thus $\Phi(H) \subseteq \pi^{-1}(\Phi(H/(H'H^p))) = \pi^{-1}(1) \subseteq H'H^p$ and we conclude that $\Phi(H) = H'H^p$.
 
         \item Since $H' \le H'H^p = \Phi(H)$, $H/\Phi(H)$ is abelian. Furthermore since $H^p \le \Phi(H)$, $H/\Phi(H)$ has exponent $p$.
         Thus $H \cong (\mathbb{Z}_p)^q$ for some positive integer $q$.
