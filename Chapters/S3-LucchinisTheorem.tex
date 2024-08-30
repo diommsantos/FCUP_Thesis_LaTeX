@@ -148,19 +148,19 @@
     \Psi_i(k_1s_1) = 1 \iff \phi_i^{-1} \circ \chi_i(s_1) = k^{-1}  \in N_1 \cap K = 1 \iff k_1 = 1 \text{ and } s_1 \in \ker{\phi_i^{-1} \circ \chi_i} = C_i.
     $$ 
     
-    Now by Theorem \ref{hommnsub}, $N_1 = \Psi(N_1)$ is a minimal normal subgroup of $L$. We claim it is the only minimal normal subgroup of $L$.
+    Now by Theorem \ref{hommnsub}, $N_1 = \Psi_1(N_1)$ is a minimal normal subgroup of $L$. We claim it is the only minimal normal subgroup of $L$.
     
     We will start by proving that $\core[L]{K} = 1$.
     To obtain a contradiction, let us assume that $\core[L]{K} \ne 1$. 
     Then there exists a non-trivial subgroup $A \nsub L$ contained in $K$.
-    Now it is not difficult to see that $\Psi_i^{-1}(A) = AC_i$, furthermore these groups are normal subgroups of $H$. Furthermore $C_1\ldots C_q \cap A \subseteq C_1\ldots C_q \cap K \subseteq \soc{H} \cap K = 1$ and thus by Theorem
+    Now it is not difficult to see that $\Psi_i^{-1}(A) = AC_i$ and that these groups are normal subgroups of $H$. Furthermore $C_1\ldots C_q \cap A \subseteq C_1\ldots C_q \cap K \subseteq \soc{H} \cap K = 1$ and thus by Theorem
     \ref{S1:SPE}, $\bigcap_{i=1}^q AC_i = A(\bigcap_{i=1}^q C_i)$. We thus obtain that 
     $$
     A = A(\bigcap_{i=1}^q C_i) = \bigcap_{i=1}^q AC_i = \bigcap_{i=1}^{q}\Psi_i^{-1}(A) \nsub H.
     $$
     But this is a contradiction since $A \cap \soc{H} \subseteq K \cap \soc{H} = 1$, that is $A$ is a non-trivial a normal subgroup of $H$ that does not contain any minimal normal subgroup.
     
-    Now we claim that $C_L(N_1) = N_1$. To obtain a contradiction let us suppose that there exists elements $k \in K$ and $n_1 \in N_1$ such that $kn_1 \notin N_1$ (that is $k \ne 1$) and $kn_1 \in C_L(N_1)$. Since $N_1$ is abelian, $n_1^{-1} \in C_L(N_1)$ and thus $k = (kn_1)n_1^{-1} \in C_L(N_1)$. What we proved until now was that $C_L(N_1) \cap K \ne 1$. Now since $C_L(N_1) \nsub L$, $K \le N_L(C_L(N_1) \cap K)$ and since $N_1$ is abelian, $N_1 \le N_L(C_L(N_1) \cap K)$. Thus $L = KN_1 \le N_L(C_L(N_1) \cap K)$. What we conclude is that $C_L(N_1) \cap K$ is a non-trivial normal subgroup of $L$ fully contained in $K$, but this contradicts the fact that $\core[L]{K} = 1$.
+    Now we claim that $C_L(N_1) = N_1$. To obtain a contradiction let us suppose that there exists elements $k \in K$ and $n_1 \in N_1$ such that $kn_1 \notin N_1$ (that is $k \ne 1$) and $kn_1 \in C_L(N_1)$. Since $N_1$ is abelian, $n_1^{-1} \in C_L(N_1)$ and thus $k = (kn_1)n_1^{-1} \in C_L(N_1)$. What we proved until now was that $C_L(N_1) \cap K \ne 1$. Now since $C_L(N_1)$ is normal in $L$, $K \le N_L(C_L(N_1) \cap K)$ and since $N_1$ is abelian, $N_1 \le N_L(C_L(N_1) \cap K)$. Thus $L = KN_1 \le N_L(C_L(N_1) \cap K)$. What we conclude is that $C_L(N_1) \cap K$ is a non-trivial normal subgroup of $L$ fully contained in $K$, but this contradicts the fact that $\core[L]{K} = 1$.
 
     Now suppose that there exists a minimal normal subgroup $A \ne N_1$ of $L$. Since $A$ is different from $N_1$,
     $[A,N_1] = 1$ and thus $A \le C_L(N_1) = N_1$, a contradiction. Therefore $N_1$ is the only minimal normal subgroup of $L$.   

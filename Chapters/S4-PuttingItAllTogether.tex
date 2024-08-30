@@ -12,7 +12,7 @@
     $$    
 \end{definition}
 
-Since $L$ has a unique minimal normal subgroup and minimal normal subgroups are sent in minimal normal subgroups via isomorphisms, we have that 
+Since $L$ has a unique minimal normal subgroup and minimal normal subgroups are sent into minimal normal subgroups via isomorphisms, we have that 
 $$
 \alpha(lM) = lM \iff \alpha(l)\alpha(M) = lM \iff \alpha(l)M = lM.
 $$
@@ -29,9 +29,37 @@ $$
 \begin{proof}
     Let $x_1,\ldots , x_n$ be the canonical basis of $F$. 
     A surjective homomorphism $\beta : F \longrightarrow L/M$ is uniquely determined by $\beta(x_1) = l_1M, \ldots , \beta(x_m) = x_mM$, where $L = \subgen{l_1,\ldots ,l_m, M}$. 
-    Now let $\gamma : F \longrightarrow L$ be a surjective homomorphism which composed with the the projection $\pi_L \colon L \longrightarrow L/M$ yields $\beta$; we must have $\gamma(x_1) = l_1z_1,\ldots ,\gamma(x_m)=l_mz_m$ with $z_1,\ldots , z_m \in M$ and $L = \subgen{l_1z_1,\ldots ,l_mz_m}$. By Theorem \ref{GaschutzT} the number of possible choices for $(z_1,\ldots ,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$. Now let $\gamma_1, \gamma_2$ be two of these homomorphisms; we claim that $\ker \gamma_1 = \ker \gamma_2 = N$ if and only if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$. 
+    Now let $\gamma : F \longrightarrow L$ be a surjective homomorphism which composed with the the projection $\pi_L \colon L \longrightarrow L/M$ yields $\beta$; we must have $\gamma(x_1) = l_1z_1,\ldots ,\gamma(x_m)=l_mz_m$ with $z_1,\ldots , z_m \in M$ and $L = \subgen{l_1z_1,\ldots ,l_mz_m}$.
+
+    We claim that the number of possible choices for $(z_1,\ldots ,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$. To prove so let $R$ be a left transversal of $M$ in $L$. Also for any $lM \in L/M$ we will denote by $r_{lM}$ the unique element $r \in R$ such that $rM = lM$. For any  $m$-tuple $(t_1M, \ldots , t_mM)$ that generates $L/M$ let us define $Z(t_1M, \ldots , t_mM)$ as
+    $$
+    \left\{ (z_1,\ldots, z_m) \in M^m | L = \subgen{r_{t_1M}z_1, \ldots , r_{t_mM}z_m} \right\}.
+    $$
+    Let us also denote by $T$ the set
+    $$
+    \left\{ (t_1M, \ldots  t_mM) \in (L/M)^m | \subgen{t_1M, \ldots  t_mM} = L/M \right\}.
+    $$
+    We can now define the function
+    \begin{align*}
+        b \colon \bigcup_{(t_1M, \ldots  t_mM) \in T}&\{(t_1M, \ldots  t_mM)\} \times Z(t_1M, \ldots  t_mM) \rightarrow \left\{ (g_1,\ldots g_m) \in L^m | \subgen{g_1,\ldots g_m} = L \right\} \\
+        & (t_1M, \ldots , t_mM, z_1,\ldots ,z_m) \mapsto (r_{t_1M}z_1, \ldots , r_{t_mM}z_m).
+    \end{align*}
+    Obviously $b$ is well defined. Also for any $g \in L$, $g \in gM$ we have that $g = r_{gM}h$ for some $h \in M$. And so for any $(g_1,\ldots g_m) \in L^m$ with the property that $\subgen{g_1,\ldots g_m} = L$ we can find $(h_1,\ldots,h_m) \in M^m$ such that $(g_1,\ldots g_m) = (r_{g_1M}h_1,\ldots, r_{g_mM}h_m)$. Thus $b(r_{g_1M},\ldots r_{g_mM}, h_1 \ldots h_m) = (g_1,\ldots g_m)$ and the surjectivity of $b$ is proven.
+    For the injectivity of $b$ it suffices to prove that given $r_1, r_2 \in R$ and $z_1, z_2 \in M$ if $r_1z_1 = r_2z_2$ then $r_1M = r_2M$ and $z_1 = z_2$, since then it easily follows that for any $d_1, d_2$ in the domain of $b$, $b(d_1) = b(d_2) \implies d_1 = d_2$.
+    Let $r_1, r_2 \in R$ and $z_1, z_2 \in M$ if $r_1z_1 = r_2z_2$ then $r_2^{-1}r_1 = z_2z_1 \in M$. That is $r_2M = r_1M$ and since $r_1,r_2$ belong to the left transversal $R$, $r_1 = r_2$. Thus $z_1 = r_1^{-1}r_2z_2 = r_2^{-1}r_2z_2 = z_2$ and injectivity is proven.
+    We just proved that $b$ is a bijection.
     
-    If $\ker \gamma_1 = \ker \gamma_2 = N$, then by the First isomorphism Theorem there exits isomorphisms $\bar{\gamma_1} \colon F/N \rightarrow L$ and $\bar{\gamma_2} \colon F/N \rightarrow L$ such that for all $x \in F$, $\bar{\gamma_1}(xN) = \gamma_1(x)$ and $\bar{\gamma_2}(xN) = \gamma_2(x)$. Now let us consider the isomorphism $\alpha = \bar{\gamma_2} \circ \bar{\gamma_1}^{-1} \colon L \rightarrow L.$ For all $x \in F$, we have that
+    By Theorem \ref{GaschutzT}, $\card{Z(t_1M, \ldots , t_mM)}$ is independent of the choice of $r_{t_1M}, \ldots  r_{t_mM}$ and thus the sets $Z$ all have the same cardinality.Thus
+    \begin{align*}
+       &\phi_{L/M}(m)\card{Z(l_1M,\ldots,l_mM)} =  \card{T}\card{Z(l_1M,\ldots,l_mM)} \\
+       = &\card{\bigcup_{(t_1M, \ldots  t_mM) \in T}\{(t_1M, \ldots  t_mM)\} \times Z(t_1M, \ldots  t_mM) } \\
+       = &\card{\left\{ (g_1,\ldots g_m) \in L^m | \subgen{g_1,\ldots g_m} = L \right\}} = \phi_L(m)
+    \end{align*}
+    and the proof of the claim that the number of possible choices for $(z_1,\ldots,z_m)$ is $\phi_L(m)/\phi_{L/M}(m)$ is complete.
+
+    Now let $\gamma_1, \gamma_2$ be two of these homomorphisms; we claim that $\ker \gamma_1 = \ker \gamma_2 = N$ if and only if there exists an automorphism $\alpha$ of $L$ which acts trivially on $L/M$ such that $\gamma_2$ is equal to $\gamma_1$ composed with $\alpha$. 
+    
+    If $\ker \gamma_1 = \ker \gamma_2 = N$, then by the First isomorphism Theorem there exist isomorphisms $\bar{\gamma_1} \colon F/N \rightarrow L$ and $\bar{\gamma_2} \colon F/N \rightarrow L$ such that for all $x \in F$, $\bar{\gamma_1}(xN) = \gamma_1(x)$ and $\bar{\gamma_2}(xN) = \gamma_2(x)$. Now let us consider the isomorphism $\alpha = \bar{\gamma_2} \circ \bar{\gamma_1}^{-1} \colon L \rightarrow L.$ For all $x \in F$, we have that
     \begin{align*}
         (\alpha \circ \gamma_1)(x) &=  \bar{\gamma_2} (\bar{\gamma_1}^{-1}\circ \gamma_1(x)) \\
         &= \bar{\gamma_2}(xN) \\
@@ -124,7 +152,7 @@ $$
 \end{proof}
 
 \begin{theorem}
-    Let $m \ge d(L)$ and $q$ be the number of $(L/M)$-endomorphisms of $M$. Then 
+    Let $m \ge d(L)$ and $q$ be the number of $(L/M)$-endomorphisms of $M$ when $M$ is abelian. Then 
     $$
     f(m) = 1 +
     \begin{cases}
