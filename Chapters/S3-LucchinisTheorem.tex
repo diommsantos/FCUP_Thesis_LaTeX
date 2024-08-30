@@ -87,7 +87,7 @@
     Using the fact that this intersection is normal in $K_r$, we claim that $\phi_r$ is a $K_r$-isomorphism, that is for any $k \in K_r$, $k \cdot \phi_r(x) = \phi_r(k \cdot x) \iff k\phi_r(x)k^{-1} = \phi_r(kxk^{-1})$ . We have that for any $k \in K_r$, $x \in N_1$, $kx\phi_r(x)k^{-1} = y\phi_r(y)$ for some $y \in N_1$ hence:
     \begin{align*}
         &kxk^{-1}k\phi_r(x)k^{-1} = y\phi_r(y)\\
-        \iff &y^{-1}kxk^{-1} = \phi_r(y)k^{-1}\phi_r(x)^{-1}k \in N_1 \cap N_r = 1\\
+        \iff &y^{-1}kxk^{-1} = \phi_r(y)k\phi_r(x)^{-1}k^{-1} \in N_1 \cap N_r = 1\\
         \implies &y = kxk^{-1} \text{ and } k\phi_r(x)k^{-1} = \phi_r(y) = \phi_r(kxk^{-1})
     \end{align*}
 
@@ -241,6 +241,7 @@ Now for $1 \le r \le q$ and $x \in N_1$
     \alpha_r(k\phi_1(m_1)\phi_2(m_2)\ldots \phi_q(m_q))(x) &= \phi_r^{-1}(\phi_r(x)^{k\phi_1(m_1)\phi_2(m_2)\ldots \phi_q(m_q)}) \\
     &= \phi_r^{-1}(\phi_r(x)^{k\phi_r(m_r)}) \\
     &= \phi_r^{-1}(\phi_r(x^k)^{\phi_r(m_r)}) \\
+    &= \phi_r^{-1}(\phi_r(x^k))^{\phi_r^{-1}(\phi_r(m_r))}\\
     &= m_rkxk^{-1}m_r^{-1} = \gamma_{m_r} \circ \gamma_{k}(x)
 \end{align*}
 where the second equality follows from the fact that $N_1,\ldots ,N_{r-1},N_{r+1}\ldots ,N_q$ centralize $N_r$ and the third from $\phi_r$ being a $K_r$-isomorphism. We thus conclude that

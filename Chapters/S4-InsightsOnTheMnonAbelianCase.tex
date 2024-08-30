@@ -7,7 +7,7 @@
 
 \begin{proof}
     Let $N_i = \pi_i(N)$. Since $N_i = \pi_i(N) \subseteq \pi_i(M^k) = M$, $M$ is a minimal normal subgroup of $L$ and $\pi_i(N)$ is normal in $L$ we have that $\pi_i(N)$ is either $1$ or $M$.
-    Furthermore we have that $\pi_i|_{L_k}^{-1}(1) = \pi_i^{-1}(1) \cap L_k = (L \times \ldots  \times 1 \times \times L) \cap L_k = (M \times \ldots  \times 1 \times \ldots  \times M)$ and that $\pi_i|_{L_k}^{-1}(M) = M^k$.
+    Furthermore we have that $\pi_i|_{L_k}^{-1}(1) = \pi_i^{-1}(1) \cap L_k = (L \times \ldots  \times 1 \times \ldots \times L) \cap L_k = (M \times \ldots  \times 1 \times \ldots  \times M)$ and that $\pi_i|_{L_k}^{-1}(M) = M^k$ and so $\pi_i^{-1}(N_i)$ is either $\pi_i|_{L_k}^{-1}(1) = (M \times \ldots  \times 1 \times \ldots  \times M)$ or $\pi_i|_{L_k}^{-1}(M) = M^k$.
     Thus $N \subseteq \cap_{i=1}^k \pi_i^{-1}(N_i) = \prod_{\left\{j | N_j = M \right\}} M_j$, that is $N$ is contained in the set whose coordinate $i$ is $M$ iff $\pi_i(N) = M$ otherwise is $1$. The first inclusion is thus complete.
 
     Now we will prove by reduction to absurd that for any $1 \le i \le k$, $\pi_i(N) = M$ implies $M_i \subseteq N$. Since $M_i$ is a minimal normal subgroup $N \cap M_i$ is either $1$ or $M_i$. If $N \cap M_i = 1$ then $[N, M_i] \le N \cap M_i = 1$, that is the elements of $N$ and $M_i$ commute. Furthermore since $M$ is non-abelian there exists $x,y \in M$ such that $xy \ne yx$. Since $\pi_i$ is a surjective function, there are $m_i \in M_i$ and $n \in N$ such that $y= \pi(m_i)$ and $x = \pi_i(n)$. We thus obtain 
@@ -34,7 +34,10 @@
 
 \begin{theorem}
     \label{S4:cardN}
-    Let us assume that $M$ is not abelian. The cardinality of the set $\mathcal{N} = \left\{N \nsub L_k | N \le \soc{L_k} \text{ and } L_k /N \cong L \right\}$ is $k$.
+    Let us assume that $M$ is not abelian. The cardinality of the set 
+    $$
+    \mathcal{N} = \left\{N \nsub L_k | N \le \soc{L_k} \text{ and } L_k /N \cong L \right\}
+    $$ is $k$.
 \end{theorem}
 
 \begin{proof}
