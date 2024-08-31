@@ -44,7 +44,7 @@ $$
         b \colon \bigcup_{(t_1M, \ldots  t_mM) \in T}&\{(t_1M, \ldots  t_mM)\} \times Z(t_1M, \ldots  t_mM) \rightarrow \left\{ (g_1,\ldots g_m) \in L^m | \subgen{g_1,\ldots g_m} = L \right\} \\
         & (t_1M, \ldots , t_mM, z_1,\ldots ,z_m) \mapsto (r_{t_1M}z_1, \ldots , r_{t_mM}z_m).
     \end{align*}
-    Obviously $b$ is well defined. Also for any $g \in L$, $g \in gM$ we have that $g = r_{gM}h$ for some $h \in M$. And so for any $(g_1,\ldots g_m) \in L^m$ with the property that $\subgen{g_1,\ldots g_m} = L$ we can find $(h_1,\ldots,h_m) \in M^m$ such that $(g_1,\ldots g_m) = (r_{g_1M}h_1,\ldots, r_{g_mM}h_m)$. Thus $b(r_{g_1M},\ldots r_{g_mM}, h_1 \ldots h_m) = (g_1,\ldots g_m)$ and the surjectivity of $b$ is proven.
+    Obviously $b$ is well defined. Also for any $g \in L$, $g \in gM=r_{gM}M$ and thus we have that $g = r_{gM}h$ for some $h \in M$. So for any $(g_1,\ldots g_m) \in L^m$ with the property that $\subgen{g_1,\ldots g_m} = L$ we can find $(h_1,\ldots,h_m) \in M^m$ such that $(g_1,\ldots g_m) = (r_{g_1M}h_1,\ldots, r_{g_mM}h_m)$. Thus $b(r_{g_1M},\ldots r_{g_mM}, h_1 \ldots h_m) = (g_1,\ldots g_m)$ and the surjectivity of $b$ is proven.
     For the injectivity of $b$ it suffices to prove that given $r_1, r_2 \in R$ and $z_1, z_2 \in M$ if $r_1z_1 = r_2z_2$ then $r_1M = r_2M$ and $z_1 = z_2$, since then it easily follows that for any $d_1, d_2$ in the domain of $b$, $b(d_1) = b(d_2) \implies d_1 = d_2$.
     Let $r_1, r_2 \in R$ and $z_1, z_2 \in M$ if $r_1z_1 = r_2z_2$ then $r_2^{-1}r_1 = z_2z_1 \in M$. That is $r_2M = r_1M$ and since $r_1,r_2$ belong to the left transversal $R$, $r_1 = r_2$. Thus $z_1 = r_1^{-1}r_2z_2 = r_2^{-1}r_2z_2 = z_2$ and injectivity is proven.
     We just proved that $b$ is a bijection.

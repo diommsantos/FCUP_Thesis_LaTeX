@@ -23,7 +23,7 @@ Now let us consider
     \rho \colon &C \rightarrow L/M \\
                 &c \mapsto cM.
 \end{align*}
-Obviously $\rho$ is well defined and is an homomorphism. It is also injective since for all $c_1, c_2 \in C$, such that $c_1M = c_2M$ then $c_2^{-1}c_1 \in M \cap C = 1$ and consequently $c_1 = c_2$. Furthermore by the First Isomorphism Theorem $\card{L/M} = \card{CM/M} = \card{C}\card{M}/\card{M} = \card{C} = \card{C/\ker rho} = \card{\rho(C)}$. Then since $\rho(C) \subseteq L/M$ we conclude that $\rho(C) = L/M$. In other words $\rho$ is a surjective function. We proved that $\rho$ is an isomorphism, and so we can define $\Psi = \rho^{-1} \colon L/M \rightarrow C$.  
+Obviously $\rho$ is well defined and is an homomorphism. It is also injective since for all $c_1, c_2 \in C$, such that $c_1M = c_2M$ then $c_2^{-1}c_1 \in M \cap C = 1$ and consequently $c_1 = c_2$. Furthermore by the First Isomorphism Theorem $\card{L/M} = \card{CM/M} = \card{C}\card{M}/\card{M} = \card{C} = \card{C/\ker \rho} = \card{\rho(C)}$. Then since $\rho(C) \subseteq L/M$ we conclude that $\rho(C) = L/M$. In other words $\rho$ is a surjective function. We proved that $\rho$ is an isomorphism, and so we can define $\Psi = \rho^{-1} \colon L/M \rightarrow C$.  
 
 Also, let $\beta \colon L_k \rightarrow L/M$ be a surjective homomorphism.
 
@@ -95,13 +95,14 @@ Thus
     $$ 
     and thus surjectivity follows.
         
-    We also easily verify that 
+    We also easily verify that for any $\dc \in \dot{C}$ and $m \in M^k$
     \begin{align*}
         \pi_L \circ \psi(\dc m) &= \pi_L(\psi(\dc))\pi_L(\psi(m)) \\
         &= \pi_L(\Psi(\beta(\dc)))M \\
         &= \Psi(\beta(\dc))M \\
         &= \beta(\dc)M, \text{ since $\rho(\Psi(\beta(\dc))) = \beta(\dc) \implies \Psi(\beta(\dc))M = \beta(\dc)$} \\
-        &= \beta(\dc)    
+        &= \beta(\dc)\beta(m) \\
+        &= \beta(\dc m)    
     \end{align*}
     
     \end{proof}
