@@ -12,18 +12,20 @@ Now we can define the following group action:
 \end{align*}
 
 We claim this action is well defined. Let $(l_1M, m_1) = (l_2M, m_2)$ where $l_1M, l_2M \in L/M$ and $m_1, m_2 \in M^k$.
-Then $l_1^{-1} = l_2^{-1}x$ for some $x \in M$ and thus $\dot{l_1}^{-1} = \dot{l_2}^{-1}\dot{x}$. We then obtain 
+Then $l_1^{-1}M = l_2^{-1}M$ and thus $\dot{l_1}^{-1} = \dot{l_2}^{-1}\dot{x}$ for some $x \in M$. We then obtain 
 \begin{align*}
     &\dot{l_1}^{-1}m_1\dot{l_1} = \dot{l_2}^{-1}\dot{x}m_1\dot{x}^{-1}\dot{l_2} = \dot{l_2}^{-1}\dot{x}\dot{x}^{-1}m_1\dot{l_2} = \dot{l_2}^{-1}m_1\dot{l_2},
 \end{align*}
 where the third equality follows since $M$ is abelian.
 
-Now let us set $x_M = 1 \in L$ and choose for any other $lM \in L/M$ one $x_{lM} \in L$ such that $x_{lM}M = lM$. We can thus define the function
+Now let us consider
 \begin{align*}
-    \Psi \colon &L/M \rightarrow L \\
-                &lM \mapsto x_{lM}.
+    \rho \colon &C \rightarrow L/M \\
+                &c \mapsto cM.
 \end{align*}
-Let us note that obviously for any $lM \in L/M$, $lM = \pi_L(\Psi(lM))$ and $\Psi(l_1)\Psi(l_2)M = \Psi(l_1)M\Psi(l_2)M = l_1Ml_2M = l_1l_2M = \Psi(l_1l_2)M$. Also, let $\beta \colon L_k \rightarrow L/M$ be a surjective homomorphism.
+Obviously $\rho$ is well defined and is an homomorphism. It is also injective since for all $c_1, c_2 \in C$, such that $c_1M = c_2M$ then $c_2^{-1}c_1 \in M \cap C = 1$ and consequently $c_1 = c_2$. Furthermore by the First Isomorphism Theorem $\card{L/M} = \card{CM/M} = \card{C}\card{M}/\card{M} = \card{C} = \card{C/\ker rho} = \card{\rho(C)}$. Then since $\rho(C) \subseteq L/M$ we conclude that $\rho(C) = L/M$. In other words $\rho$ is a surjective function. We proved that $\rho$ is an isomorphism, and so we can define $\Psi = \rho^{-1} \colon L/M \rightarrow C$.  
+
+Also, let $\beta \colon L_k \rightarrow L/M$ be a surjective homomorphism.
 
 We have now all the necessary conditions to define the group action:
 
@@ -33,34 +35,13 @@ We have now all the necessary conditions to define the group action:
 \end{align*}
 
 We claim that this function is well defined. 
-Let $(l_1M, m_1) = (l_2M, m_2)$ where $l_1M, l_2M \in L/M$ and $m_1, m_2 \in M$. Then since $l_1M = l_2M \iff l_2^{-1}l_1 \in M$, $\dot{l_2}^{-1}\dot{l_1} \in M^k$ and thus $\beta(\dot{l_2}^{-1}\dot{l_1}) = 1$. 
+Let $(l_1M, m_1) = (l_2M, m_2)$ where $l_1M, l_2M \in L/M$ and $m_1, m_2 \in M$. Then since $l_1M = l_2M \iff l_2^{-1}l_1 \in M$, $\dot{l_2}^{-1}\dot{l_1} \in M^k$ ($= \ker \beta$ by Theorem \ref{S4:kerbeta}), $\beta(\dot{l_2}^{-1}\dot{l_1}) = 1$. 
 This in turn implies $ \beta(\dot{l_2})^{-1}\beta(\dot{l_1}) = 1 \implies \beta(\dot{l_1}) = \beta(\dot{l_2})$. 
-Thus: 
+Thus 
 
 \begin{align*}
     l_1M \cdot m_1 = \Psi(\beta(\dot{l_1}))^{-1}m_1\Psi(\beta(\dot{l_1})) = \Psi(\beta(\dot{l_2}))^{-1}m_2\Psi(\beta(\dot{l_2})) = l_2M \cdot m_2.
 \end{align*}
-
-Furthermore we claim this function is a group action. We have that 
-$$
-1M \cdot m_1 = \Psi(\beta(1))^{-1}m_1\Psi(\beta(1)) = \Psi(M)^{-1}m_1\Psi(M) = m_1 
-$$
-where the third equality follows since $\Psi(M) = 1$.
-
-Also since $(\Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2}))M^{-1}) = (\Psi(\beta(\dot{l_1})\beta(\dot{l_2}))M)^{-1} = (\Psi(\beta(\dot{l_1}\dot{l_2}))M)^{-1}$ there exists an $x \in M$ such that 
-$$
-(\Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2})))^{-1} = \Psi(\beta(\dot{l_1}\dot{l_2}))^{-1}x^{-1} \iff \Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2})) = x\Psi(\beta(\dot{l_1}\dot{l_2})).
-$$
-It thus follows that
-\begin{align*}
-    l_2M \cdot (l_1M \cdot m_1) &= \Psi(\beta(\dot{l_2}))^{-1}\Psi(\beta(\dot{l_1}))^{-1}m_1\Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2})) \\
-    &= (\Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2})))^{-1}m_1\Psi(\beta(\dot{l_1}))\Psi(\beta(\dot{l_2})) \\
-    &= \Psi(\beta(\dot{l_1}\dot{l_2}))^{-1}x^{-1}m_1x\Psi(\beta(\dot{l_1}\dot{l_2})) \\
-    &= \Psi(\beta(\dot{l_1}\dot{l_2}))^{-1}m_1\Psi(\beta(\dot{l_1}\dot{l_2})), \text{ since $M^k$ is abelian} \\
-    &= l_1l_2M \cdot m_1.
-\end{align*}
-The proof that this function is indeed an action is complete.
-
 
 \begin{theorem}
     \label{S4:LMhom}
@@ -78,14 +59,14 @@ The proof that this function is indeed an action is complete.
 
     That $\ker \varphi|_{M^k} = N$ is obvious, since $N = \ker \varphi \subseteq \ker \beta = M^k$.
 
-    Now for any $lM \in L/M$ and any $m \in M^k$, we have that $\varphi(\dl)M = \pi_L \circ \varphi(\dl) = \beta(\dl) = \Psi(\beta(\dl))M$ and thus there exist an $x \in M$ such that $\varphi(\dl) = x\Psi(\beta(\dl))$.
-    Then follows that
+    Now for any $lM \in L/M$ and any $m \in M^k$, we have that $\varphi(\dl)M = \pi_L \circ \varphi(\dl) = \beta(\dl) = \rho(\Psi(\beta(\dl))) = \Psi(\beta(\dl))M \implies \varphi(\dl)^{-1}M = \Psi(\beta(\dl))^{-1}M$. Thus there exists an $x \in M$ such that $\varphi(\dl)^{-1} = \Psi(\beta(\dl))^{-1}x^{-1} \implies \varphi(\dl) = x\Psi(\beta(\dl))$.
+    It then follows that
     \begin{align*}
         \varphi|_{M^k}(lM \cdot m) &= \varphi(\dl^{-1} m \dl) \\
-                                    &= \varphi(\dl)^{-1} \varphi(m) \varphi(\dl) \\
-                                    &= \Psi(\beta(\dl))^{-1}x^{-1} \varphi(m) x\Psi(\beta(\dl)) \\
-                                    &= \Psi(\beta(\dl))^{-1} \varphi(m) \Psi(\beta(\dl)), \text{ since $M$ is abelian} \\
-                                    &= lM \cdot \varphi|_{M^k}(m) 
+        &= \varphi(\dl)^{-1} \varphi(m) \varphi(\dl) \\
+        &= \Psi(\beta(\dl))^{-1}x^{-1} \varphi(m) x\Psi(\beta(\dl)) \\
+        &= \Psi(\beta(\dl))^{-1}x^{-1}x \varphi(m) \Psi(\beta(\dl)), \text{ since $M$ is abelian} \\
+        &= lM \cdot \varphi|_{M^k}(m) 
     \end{align*}
     and the proof of this inclusion is complete.
 
@@ -99,19 +80,31 @@ The proof that this function is indeed an action is complete.
     This function is well-defined since $\dot{C}$ and $M^k$ are complements. It is a homomorphism since for any $\dc_1, \dc_2 \in \dot{C}$ and $m_1, m_2 \in M^k$,
     \begin{align*}
         \psi(\dc_1 m_1 \dc_2 m_2) &= \psi(\dc_1 \dc_2 m_1^{\dc_2^{-1}} m_2) \\
-                                   &= \Psi(\beta(\dc_1 \dc_2)) \nu(m_1^{\dc_2^{-1}}) \nu(m_2) \\
-                                   &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) \nu(\dc_2 \cdot m_1) \nu(m_2) \\
-                                   &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) (\dc_2 \cdot \nu(m_1)) \nu(m_2) \\
-                                   &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) \nu(m_1)^{\Psi(\beta(\dc_2))^{-1}} \nu(m_2) \\
-                                   &= \Psi(\beta(\dc_1)) \nu(m_1) \Psi(\beta(\dc_2)) \nu(m_2) \\
-                                   &= \psi(\dc_1 m_1) \psi(\dc_2 m_2).
+        &= \Psi(\beta(\dc_1 \dc_2)) \nu(m_1^{\dc_2^{-1}}) \nu(m_2) \\
+        &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) \nu(\dc_2M \cdot m_1) \nu(m_2) \\
+        &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) (\dc_2M \cdot \nu(m_1)) \nu(m_2) \\
+        &= \Psi(\beta(\dc_1)) \Psi(\beta(\dc_2)) \nu(m_1)^{\Psi(\beta(\dc_2))^{-1}} \nu(m_2) \\
+        &= \Psi(\beta(\dc_1)) \nu(m_1) \Psi(\beta(\dc_2)) \nu(m_2) \\
+        &= \psi(\dc_1 m_1) \psi(\dc_2 m_2).
     \end{align*}
-    We claim $\ker \psi = \ker \nu$. Let $\dc \in \dot{C}$ and $m \in M^k$ be such that $\psi(\dc m) = 1$. Then
-    $\Psi(\beta(\dc)) = \nu(m)^{-1} \in M \iff \beta(\dc) = \Psi(\beta(\dc))M = M$. Thus $\dc \in \ker \beta \cap \dot{C} = M^{k} \cap \dot{C} = 1$. We thus obtain that
-    $\Psi(\beta(\dc)) = \Psi(M) = 1$ and thus $\nu(m) = \Psi(\beta(\dc))\nu(m) = 1$. What we conclude from this is that if $\psi(\dc m) = 1$ then $\dc = 1$ and $m \in \ker \psi$, that is $\ker \psi = \ker \nu$.
-    Surjectivity easily follows once we note that $\card{L_k}/\card{N} = \card{L_k}/\card{\ker \nu} = L$. Then since $\psi(L_k) \subseteq L$, applying the First Isomorphism Theorem we obtain $\card{L} = \card{L_k}/\card{N} = \card{L_k}/\card{\ker \psi} = \card{\psi(L_k)}$ and thus surjectivity.
+    We claim that $\ker \psi = \ker \nu$. Let $\dc \in \dot{C}$ and $m \in M^k$ be such that $\psi(\dc m) = 1$. Then
+    $\Psi(\beta(\dc)) = \nu(m)^{-1} \in M \cap C = 1$. Thus $\dc \in \ker \beta \cap \dot{C} = M^{k} \cap \dot{C} = 1$ and $m \in \ker \nu$. What we conclude from this is that if $\psi(\dc m) = 1$ then $\dc = 1$ and $m \in \ker \psi$, that is $\ker \psi = \ker \nu$.
+
+    Since $\psi(L_k) \subseteq L$, applying the First Isomorphism Theorem we obtain 
+    $$
+    \card{L} = \card{L_k}/\card{M}^{k-1} = \card{L_k}/\card{\ker \psi} = \card{\psi(L_k)}
+    $$ 
+    and thus surjectivity follows.
         
-    We also easily verify that $\pi_L \circ \psi(\dc m) = \pi_L(\psi(\dc))\pi_L(\psi(m))=\pi_L(\Psi(\beta(\dc))) = \beta(\dc)M = \beta(\dc)$.
+    We also easily verify that 
+    \begin{align*}
+        \pi_L \circ \psi(\dc m) &= \pi_L(\psi(\dc))\pi_L(\psi(m)) \\
+        &= \pi_L(\Psi(\beta(\dc)))M \\
+        &= \Psi(\beta(\dc))M \\
+        &= \beta(\dc)M, \text{ since $\rho(\Psi(\beta(\dc))) = \beta(\dc) \implies \Psi(\beta(\dc))M = \beta(\dc)$} \\
+        &= \beta(\dc)    
+    \end{align*}
+    
     \end{proof}
 
     \begin{theorem}
